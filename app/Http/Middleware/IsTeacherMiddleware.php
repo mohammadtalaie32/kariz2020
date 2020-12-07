@@ -24,7 +24,8 @@ class IsTeacherMiddleware
             } else {
                 return $next($request);
             }
-        } else {
+        }
+        else {
             return redirect('login');
 
         }
