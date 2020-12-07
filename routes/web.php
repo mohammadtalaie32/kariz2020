@@ -24,6 +24,24 @@ Route::get('/', function () {
 
 });
 
+Route::get('/admin',function (){
+    return "you are admin";
+})->middleware('IsAdminMiddleware');
+
+
+
+Route::get('/teacher',function (){
+    return "you are teacher";
+})->middleware('IsTeacherMiddleware');
+
+
+
+Route::get('/student',function (){
+    return "you are student";
+})->middleware('IsStudentMiddleware');
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
