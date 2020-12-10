@@ -79,10 +79,7 @@ Intro Section
 
         <div class="intro-info " style="background-color:deepskyblue;">
             <h2> ما تو را با <span> بیزینس</span><br><br>آشنا خواهیم کرد</h2>
-            <div>
-                <a href="#about" class="btn-get-started scrollto" style="background-color:skyblue;"><button style="background-color:tomato">همین حالا شروع کن</button></a>
-                <a href="#services" class="btn-services scrollto" style="background-color:skyblue;"><button style="background-color:tomato">اطلاعات بیشتر میخوام</button></a>
-            </div>
+
         </div>
 
     </div>
