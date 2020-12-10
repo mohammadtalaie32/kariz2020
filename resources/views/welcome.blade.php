@@ -46,7 +46,7 @@ Header
         <div class="logo float-left">
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <h1 class="text-light"><a href="#header"><span>Kariz</span></a></h1> -->
-            <a href="#intro" class="scrollto"><img src="img/kariz.png" alt="" class="img-fluid"></a>
+            <a href="#intro" class="scrollto"><img src="img/kariz.png" width = "200" alt="" class="img-fluid"></a>
         </div>
 
         <nav class="main-nav float-right d-none d-lg-block ">
@@ -70,18 +70,18 @@ Header
 Intro Section
 ============================-->
 
-<section  class="clearfix" style="background-color:gray;">
-    <div class="container" style="background-color:gray;">
+<section  class="clearfix" style="background-color:deepskyblue;">
+    <div class="container" style="background-color:deepskyblue;">
 
         <div class="intro-img">
             <img src="img/intro-img.svg" alt="" class="img-fluid">
         </div>
 
-        <div class="intro-info " style="background-color:gray;">
+        <div class="intro-info " style="background-color:deepskyblue;">
             <h2> ما تو را با <span> بیزینس</span><br><br>آشنا خواهیم کرد</h2>
             <div>
-                <a href="#about" class="btn-get-started scrollto" style="background-color:lightgray;"><button style="background-color:lightgray">همین حالا شروع کن</button></a>
-                <a href="#services" class="btn-services scrollto" style="background-color:lightgray;"><button style="background-color:lightgray">اطلاعات بیشتر میخوام</button></a>
+                <a href="#about" class="btn-get-started scrollto" style="background-color:skyblue;"><button style="background-color:tomato">همین حالا شروع کن</button></a>
+                <a href="#services" class="btn-services scrollto" style="background-color:skyblue;"><button style="background-color:tomato">اطلاعات بیشتر میخوام</button></a>
             </div>
         </div>
 
