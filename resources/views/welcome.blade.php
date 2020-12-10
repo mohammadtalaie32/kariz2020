@@ -1,4 +1,4 @@
-
+<!-- hello -->
     <!DOCTYPE html>
 <html lang="fr">
 
@@ -56,24 +56,7 @@ Header
                 <li><a href="#services">سرویس ها</a></li>
                 <li><a href="#portfolio">پروژه ها</a></li>
                 <li><a href="#team">تیم ما</a></li>
-                <li class="drop-down"><a href="">امکانات</a>
-                    <ul>
-                        <li><a href="#">امکانات 1</a></li>
-                        <li class="drop-down"><a href="#">امکانات</a>
-                            <ul>
-                                <li><a href="#">امکانات 1</a></li>
-                                <li><a href="#">امکانات 2</a></li>
-                                <li><a href="#">امکانات 3</a></li>
-                                <li><a href="#">امکانات 4</a></li>
-                                <li><a href="#">امکانات 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">امکانات 3</a></li>
-                        <li><a href="#">امکانات 4</a></li>
-                        <li><a href="#">امکانات 5</a></li>
-                    </ul>
-                </li>
-
+                <li><a href="">امکانات</a></li>
                 <li class="active"><a href="#intro">خانه</a></li>
             </ul>
         </nav>
