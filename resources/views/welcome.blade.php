@@ -43,10 +43,10 @@ Header
 <header id="header" class="fixed-top">
     <div class="container">
 
-        <div class="logo float-left">
+        <div class=" float-left">
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <h1 class="text-light"><a href="#header"><span>Kariz</span></a></h1> -->
-            <a href="#intro" class="scrollto"><img src="img/kariz.png" width = "200" alt="" class="img-fluid"></a>
+            <a href="#intro" class="scrollto"><img src="img/kariz.png" height="100" width = "110" alt="" class="img-fluid"></a>
         </div>
 
         <nav class="main-nav float-right d-none d-lg-block ">
@@ -78,7 +78,7 @@ Intro Section
         </div>
 
         <div class="intro-info " style="background-color:deepskyblue;">
-            <h2> ما تو را با <span> بیزینس</span><br><br>آشنا خواهیم کرد</h2>
+           
 
         </div>
 

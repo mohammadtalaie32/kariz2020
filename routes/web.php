@@ -17,6 +17,13 @@ use Illuminate\Http\Request;
 |
 */
 
+
+// Admin Routes Here! 
+Route::get('/admin' , [AdminController::class , 'index']);
+
+
+// End Of Admin Routes
+
 Route::get('/', function()  {
     return view('welcome');
 });
