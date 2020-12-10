@@ -22,6 +22,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('font.css')); ?>"/>
 </head>
 
+<style>
+h1,h2,h3,h4,h5,h6,p,span {
+    font-family: '20S-Yekan' !important;
+}
+
+</style>
 <body style="font-family: '20S-Yekan' !important;" class="dark-edition">
 <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
@@ -31,20 +37,20 @@
           Tip 2: you can also add an image using data-image tag
       -->
         <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Admin Panel
+                پنل مدیریتی
             </a></div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link" href="./dashboard.html">
+                <li class="<?php if(Request::is('admin')): ?> nav-item active <?php endif; ?>   ">
+                <a class="nav-link" href="<?php echo e(url('/admin')); ?>">
                         <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
+                        <p>گزارش کلی</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./user.html">
+                <li class="<?php if(Request::is('admin/courses')): ?> nav-item active <?php endif; ?> nav-item ">
+                    <a class="nav-link" href="<?php echo e(url('admin/courses')); ?>">
                         <i class="material-icons">person</i>
-                        <p>User Profile</p>
+                        <p>مدیریت کورس ها</p>
                     </a>
                 </li>
                 <li class="nav-item ">
@@ -87,8 +93,8 @@
         </div>
     </div>
     <div class="main-panel">
-        <div class="content" style="margin-top: 0px !important;">
-            <div class="container-fluid" >
+        <div class="content" style="margin-top: 10px !important;">
+            <div class="container" style="direction: rtl;text-align:right;font-family: '20S-Yekan' !important;">
                 <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-    Hello
+   
 <?php $__env->stopSection(); ?>
 
 
