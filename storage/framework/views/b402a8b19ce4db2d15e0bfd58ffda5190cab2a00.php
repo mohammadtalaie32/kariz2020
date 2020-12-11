@@ -83,12 +83,12 @@ h1,h2,h3,h4,h5,h6,p,span {
                         <p>Notifications</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item active-pro ">
+                <li class="nav-item active-pro ">
                       <a class="nav-link" href="./upgrade.html">
                           <i class="material-icons">unarchive</i>
                           <p>Upgrade to PRO</p>
                       </a>
-                  </li> -->
+                  </li>
             </ul>
         </div>
     </div>
