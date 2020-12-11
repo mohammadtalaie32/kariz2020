@@ -62,10 +62,10 @@ h1,h2,h3,h4,h5,h6,p,span {
                         <p>مدیریت کتاب های فروشگاه</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./typography.html">
+                <li class="<?php if(Request::is('admin/feeds')): ?> nav-item active <?php endif; ?> nav-item ">
+                    <a class="nav-link" href="<?php echo e(url('admin/feeds')); ?>">
                         <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                        <p>مدیریت اطلاعیه ها</p>
                     </a>
                 </li>
                 <li class="nav-item ">
