@@ -56,10 +56,10 @@ h1,h2,h3,h4,h5,h6,p,span {
                         <p>مدیریت کورس ها</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./tables.html">
+                <li class="<?php if(Request::is('admin/books')): ?> nav-item active <?php endif; ?> nav-item ">
+                    <a class="nav-link" href="<?php echo e(url('admin/books')); ?>">
                         <i class="material-icons">content_paste</i>
-                        <p>Table List</p>
+                        <p>مدیریت کتاب های فروشگاه</p>
                     </a>
                 </li>
                 <li class="nav-item ">

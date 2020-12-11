@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Book;
 
 class AdminController extends Controller
 {
@@ -16,5 +17,11 @@ class AdminController extends Controller
         $courses = Course::all();
         $course_count = Course::count();
         return view('admin.courses' , ['courses' => $courses , 'course_count' => $course_count]);
+    }
+
+    public function books() {
+        $books = Book::all();
+        $book_count = Book::count();
+        return view('admin.books' , ['books' => $books , 'book_count' => $book_count]);
     }
 }

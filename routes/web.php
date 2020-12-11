@@ -21,6 +21,7 @@ use App\Http\Controllers\AdminController;
 // Admin Routes Here! 
 Route::get('/admin' , [AdminController::class , 'index']);
 Route::get('admin/courses', [AdminController::class , 'courses']);
+Route::get('admin/books' , [AdminController::class , 'books']);
 
 
 // End Of Admin Routes
