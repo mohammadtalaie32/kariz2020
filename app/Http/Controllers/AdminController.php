@@ -14,6 +14,7 @@ class AdminController extends Controller
 
     public function courses() {
         $courses = Course::all();
-        return view('admin.courses' , ['courses' => $courses]);
+        $course_count = Course::count();
+        return view('admin.courses' , ['courses' => $courses , 'course_count' => $course_count]);
     }
 }

@@ -874,3 +874,4 @@ Footer
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/welcome.blade.php ENDPATH**/ ?>
