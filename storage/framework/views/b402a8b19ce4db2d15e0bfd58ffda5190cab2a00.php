@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href=<?php echo e(asset('admin_panel/img/favicon.png')); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Material Dashboard Dark Edition by Creative Tim
+        پنل مدیریت  
     </title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -36,9 +36,12 @@ h1,h2,h3,h4,h5,h6,p,span {
 
           Tip 2: you can also add an image using data-image tag
       -->
-        <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                 پنل مدیریتی
-            </a></div>
+            </a>
+        </div>
+
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="<?php if(Request::is('admin')): ?> nav-item active <?php endif; ?>   ">
@@ -83,12 +86,7 @@ h1,h2,h3,h4,h5,h6,p,span {
                         <p>Notifications</p>
                     </a>
                 </li>
-                <li class="nav-item active-pro ">
-                      <a class="nav-link" href="./upgrade.html">
-                          <i class="material-icons">unarchive</i>
-                          <p>Upgrade to PRO</p>
-                      </a>
-                  </li>
+                
             </ul>
         </div>
     </div>
@@ -98,13 +96,9 @@ h1,h2,h3,h4,h5,h6,p,span {
                 <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>
-    </div>
-
-      
-    </div>
+    </div>   
 </div>
 
 </body>
-
 </html>
 <?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/layouts/admin.blade.php ENDPATH**/ ?>

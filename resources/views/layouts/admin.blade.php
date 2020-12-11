@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href={{asset('admin_panel/img/favicon.png')}}>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Material Dashboard Dark Edition by Creative Tim
+        پنل مدیریت  
     </title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,h6,p,span {
                 پنل مدیریتی
             </a>
         </div>
-        
+
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="@if(Request::is('admin')) nav-item active @endif   ">
@@ -91,7 +91,7 @@ h1,h2,h3,h4,h5,h6,p,span {
                           <i class="material-icons">unarchive</i>
                           <p>Upgrade to PRO</p>
                       </a>
-                  </li> --}}
+                </li> --}}
             </ul>
         </div>
     </div>
@@ -105,5 +105,4 @@ h1,h2,h3,h4,h5,h6,p,span {
 </div>
 
 </body>
-
 </html>
