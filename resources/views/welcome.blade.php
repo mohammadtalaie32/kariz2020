@@ -76,7 +76,7 @@ Intro Section
         <div class="intro-img">
             <img src="img/intro-img.svg" alt="" class="img-fluid">
         </div>
-
+            
         <div class="intro-info " style="background-color:deepskyblue;">
            
 
