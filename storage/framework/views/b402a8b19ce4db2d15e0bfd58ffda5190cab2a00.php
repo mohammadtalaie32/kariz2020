@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href={{asset("admin_panel/img/apple-icon.png")}}>
-    <link rel="icon" type="image/png" href={{asset('admin_panel/img/favicon.png')}}>
+    <link rel="apple-touch-icon" sizes="76x76" href=<?php echo e(asset("admin_panel/img/apple-icon.png")); ?>>
+    <link rel="icon" type="image/png" href=<?php echo e(asset('admin_panel/img/favicon.png')); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
         Material Dashboard Dark Edition by Creative Tim
@@ -15,11 +15,11 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-    <link href={{asset('admin_panel/css/material-dashboard.css?v=2.1.0')}} rel="stylesheet" />
+    <link href=<?php echo e(asset('admin_panel/css/material-dashboard.css?v=2.1.0')); ?> rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href={{asset('admin_panel/demo/demo.css')}} rel="stylesheet" />
+    <link href=<?php echo e(asset('admin_panel/demo/demo.css')); ?> rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset('font.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('font.css')); ?>"/>
 </head>
 
 <style>
@@ -41,14 +41,14 @@ h1,h2,h3,h4,h5,h6,p,span {
             </a></div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="@if(Request::is('admin')) nav-item active @endif   ">
-                <a class="nav-link" href="{{ url('/admin') }}">
+                <li class="<?php if(Request::is('admin')): ?> nav-item active <?php endif; ?>   ">
+                <a class="nav-link" href="<?php echo e(url('/admin')); ?>">
                         <i class="material-icons">dashboard</i>
                         <p>گزارش کلی</p>
                     </a>
                 </li>
-                <li class="@if(Request::is('admin/courses')) nav-item active @endif nav-item ">
-                    <a class="nav-link" href="{{ url('admin/courses') }}">
+                <li class="<?php if(Request::is('admin/courses')): ?> nav-item active <?php endif; ?> nav-item ">
+                    <a class="nav-link" href="<?php echo e(url('admin/courses')); ?>">
                         <i class="material-icons">person</i>
                         <p>مدیریت کورس ها</p>
                     </a>
@@ -95,7 +95,7 @@ h1,h2,h3,h4,h5,h6,p,span {
     <div class="main-panel">
         <div class="content" style="margin-top: 10px !important;">
             <div class="container" style="direction: rtl;text-align:right;font-family: '20S-Yekan' !important;">
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>
     </div>
@@ -107,3 +107,4 @@ h1,h2,h3,h4,h5,h6,p,span {
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/layouts/admin.blade.php ENDPATH**/ ?>
