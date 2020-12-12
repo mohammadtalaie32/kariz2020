@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href=<?php echo e(asset('admin_panel/img/favicon.png')); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        پنل مدیریت  
+        پنل مدیریت
     </title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -96,9 +96,10 @@ h1,h2,h3,h4,h5,h6,p,span {
                 <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>
-    </div>   
+    </div>
 </div>
 
 </body>
 </html>
+
 <?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/layouts/admin.blade.php ENDPATH**/ ?>
