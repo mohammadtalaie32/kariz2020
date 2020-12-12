@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <fieldset style="border: 2px solid white"></fieldset>
+    <fieldset style="border: 1px solid white">
     <form method="POST" action="/admin/courses/update/{{$course->id}}" enctype="multipart/form-data">
         {{csrf_field()}}
       <input type="hidden" name="_method" value="POST">
@@ -38,4 +38,5 @@
         </div>
         @endif
     </fieldset>
+    <hr>
 @endsection

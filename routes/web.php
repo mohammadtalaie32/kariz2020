@@ -29,7 +29,7 @@ Route::any('/admin/courses/store',[AdminCourseController::class , 'store'])->mid
 Route::any('/admin/courses/{id}/edit',[AdminCourseController::class , 'edit'])->middleware(IsAdminMiddleware::class);
 Route::any('/admin/courses/update/{id}',[AdminCourseController::class,'update'])->middleware(IsAdminMiddleware::class);
 Route::any('/admin/courses/delete/{id}',[AdminCourseController::class , 'destroy'])->middleware(IsAdminMiddleware::class);
-
+Route::any('/admin/courses/searched',[AdminCourseController::class,'search'])->middleware(IsAdminMiddleware::class);
 
 // End Of Admin Routes
 

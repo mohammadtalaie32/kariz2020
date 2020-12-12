@@ -1,17 +1,25 @@
 <?php $__env->startSection("content"); ?>
+    <form method = "POST" action="/admin/courses/searched">
+        <?php echo e(csrf_field()); ?>
+
+        <input type="text" name="searched_course" placeholder="نام دوره را سرج کنید" size="40">
+        <input type="submit" value="جستجو" class="btn btn-primary">
+    </form>
+
+    <!-- -->
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
         </div>
 
-        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <h5>دکمه 2</h5>
-        </div>
+
+
+
     </div>
     <br>
     <div>
-       <h1 style="text-align:center;color:white">برای ویرایش دوره ها رو نام دوره کلیک کنید</h1>
+       <h1 style="text-align:center;color:white">برای ویرایش دوره ها روی نام دوره کلیک کنید</h1>
     </div>
     <?php
         $i = 0;

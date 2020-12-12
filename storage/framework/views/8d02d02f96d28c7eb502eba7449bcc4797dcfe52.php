@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-    <fieldset style="border: 2px solid white"></fieldset>
+    <fieldset style="border: 1px solid white">
     <form method="POST" action="/admin/courses/update/<?php echo e($course->id); ?>" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
@@ -38,6 +38,7 @@
         </div>
         <?php endif; ?>
     </fieldset>
+    <hr>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/admin/courses/edit.blade.php ENDPATH**/ ?>

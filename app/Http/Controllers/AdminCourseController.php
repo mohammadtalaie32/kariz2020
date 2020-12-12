@@ -113,4 +113,18 @@ class AdminCourseController extends Controller
         $course->delete();
         return redirect('/admin/courses');
     }
+
+    public function search(Request $request){
+        $input = $request->all();
+        $courses = Course::all();
+        if($input['searched_course'] != null){
+            $searched_courses = $courses->where('name','=',$input['searched_course']);
+            return view('admin.courses.search',compact('searched_courses'));
+        }
+        else{
+            $searched_courses = $courses->where('name','=',$input['searched_course']);
+            return view('admin.courses.search',compact('searched_courses'));
+        }
+
+    }
 }
