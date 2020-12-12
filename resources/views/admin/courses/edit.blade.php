@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <pre>
+    <fieldset style="border: 2px solid white">
     <form method="POST" action="/admin/courses/update/{{$course->id}}" enctype="multipart/form-data">
         {{csrf_field()}}
       <input type="hidden" name="_method" value="POST">
@@ -18,7 +19,7 @@
         <textarea rows="10" cols="100" name="text">{{$course->text}}</textarea>
 
         <label for="picture">عکس دوره : </label>
-        <input type  = "file" name="picture" style="color:white">
+        <input type  = "file" name="picture" style="color:white" value="{{$course->picture}}">
 
         <input type = "submit" value="به روز رسانی دوره" class="btn btn-primary">
         </form>

@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string("date");
             $table->longtext("text");
             $table->timestamps();
-            $table->string('picture');
+            $table->string('picture')->default('Null');
 
         });
     }

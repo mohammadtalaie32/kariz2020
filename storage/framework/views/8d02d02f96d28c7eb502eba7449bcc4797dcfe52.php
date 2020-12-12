@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
     <pre>
+    <fieldset style="border: 2px solid white">
     <form method="POST" action="/admin/courses/update/<?php echo e($course->id); ?>" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
@@ -18,7 +19,7 @@
         <textarea rows="10" cols="100" name="text"><?php echo e($course->text); ?></textarea>
 
         <label for="picture">عکس دوره : </label>
-        <input type  = "file" name="picture" style="color:white">
+        <input type  = "file" name="picture" style="color:white" value="<?php echo e($course->picture); ?>">
 
         <input type = "submit" value="به روز رسانی دوره" class="btn btn-primary">
         </form>

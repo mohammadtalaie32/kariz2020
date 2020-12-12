@@ -24,8 +24,8 @@ Route::get('/admin' , [AdminController::class , 'index'])->middleware(IsAdminMid
 Route::get('admin/courses', [AdminController::class, 'courses'])->middleware(IsAdminMiddleware::class);
 Route::get('admin/books' , [AdminController::class , 'books'])->middleware(IsAdminMiddleware::class);
 Route::get('admin/feeds' , [AdminController::class , 'feeds'])->middleware(IsAdminMiddleware::class);
-Route::get('/admin/courses/create',[AdminCourseController::class , 'create'])->middleware(IsAdminMiddleware::class);
-Route::post('/admin/courses/store',[AdminCourseController::class , 'store'])->middleware(IsAdminMiddleware::class);
+Route::any('/admin/courses/create',[AdminCourseController::class , 'create'])->middleware(IsAdminMiddleware::class);
+Route::any('/admin/courses/store',[AdminCourseController::class , 'store'])->middleware(IsAdminMiddleware::class);
 Route::any('/admin/courses/{id}/edit',[AdminCourseController::class , 'edit'])->middleware(IsAdminMiddleware::class);
 Route::any('/admin/courses/update/{id}',[AdminCourseController::class,'update'])->middleware(IsAdminMiddleware::class);
 Route::any('/admin/courses/delete/{id}',[AdminCourseController::class , 'destroy'])->middleware(IsAdminMiddleware::class);

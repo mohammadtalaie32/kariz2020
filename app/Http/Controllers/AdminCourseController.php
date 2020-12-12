@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Null_;
 
 class AdminCourseController extends Controller
 {
@@ -41,9 +42,12 @@ class AdminCourseController extends Controller
         //
 
         $input = $request->all();
-        $name = $request->file('picture')->getClientOriginalName();
-        $request->file('picture')->move('images',$name);
-        $input['picture'] = $name;
+
+        if(array_key_exists('picture', $input)) {
+            $name = $request->file('picture')->getClientOriginalName();
+            $request->file('picture')->move('images', $name);
+            $input['picture'] = $name;
+        }
         Course::create($input);
         return redirect('/admin/courses');
     }
@@ -84,9 +88,11 @@ class AdminCourseController extends Controller
         //
         $course = Course::find($id);
         $input = $request->all();
-        $name = $request->file('picture')->getClientOriginalName();
-        $request->file('picture')->move('images',$name);
-        $input['picture'] = $name;
+        if(array_key_exists('picture',$input)) {
+            $name = $request->file('picture')->getClientOriginalName();
+            $request->file('picture')->move('images', $name);
+            $input['picture'] = $name;
+        }
         $course->update($input);
         return redirect('/admin/courses');
     }
@@ -101,7 +107,9 @@ class AdminCourseController extends Controller
     {
         //
         $course  = Course::find($id);
-        unlink('images/'.$course->picture);
+        if($course['picture'] != 'Null') {
+            unlink('images/' . $course->picture);
+        }
         $course->delete();
         return redirect('/admin/courses');
     }
