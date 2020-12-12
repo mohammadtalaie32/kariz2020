@@ -131,9 +131,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+        'name' => [
+            'required' => 'فیلد نام دوره را وارد کنید.',
+        ],'teacher'=>['required'=>'فیلد نام مدرس دوره را وارد کنید'],
+        'date'=>['required'=>'فیلد تاریخ دوره را وارد کنید'],
+        'text'=>['required'=>'فیلد توضیحات دوره را وارد کنید']
     ],
 
     /*

@@ -1,6 +1,5 @@
 <?php $__env->startSection('content'); ?>
-    <pre>
-    <fieldset style="border: 2px solid white">
+    <fieldset style="border: 2px solid white"></fieldset>
     <form method="POST" action="/admin/courses/update/<?php echo e($course->id); ?>" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
@@ -22,14 +21,22 @@
         <input type  = "file" name="picture" style="color:white" value="<?php echo e($course->picture); ?>">
 
         <input type = "submit" value="به روز رسانی دوره" class="btn btn-primary">
-        </form>
+        </pre>
+    </form>
+    <pre>
         <form method="DELETE" action="/admin/courses/delete/<?php echo e($course->id); ?>">
             <input type="submit" value="حذف کردن دوره" class="btn btn-info">
         </form>
-
-        </pre>
-
-
+    </pre>
+    <?php if(count($errors) > 0): ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li><?php echo e($error); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div>
+        <?php endif; ?>
     </fieldset>
 <?php $__env->stopSection(); ?>
 

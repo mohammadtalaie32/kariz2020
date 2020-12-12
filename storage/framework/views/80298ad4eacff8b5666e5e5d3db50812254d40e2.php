@@ -22,19 +22,25 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $course = $courses[$i] ?>
-                    <a href = "/admin/courses/<?php echo e($course->id); ?>/edit"><h1 style="color:red" <?php echo e($course->name); ?> </h1><</a>
+                    <a href = "/admin/courses/<?php echo e($course->id); ?>/edit"><h1 style="color:red"> <?php echo e($course->name); ?> </h1></a>
                     <h4> <?php echo e($course->teacher); ?> </h2>
                     <h4> <?php echo e($course->date); ?> </h2>
                     <h4> <?php echo e($course->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($course->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
                 </div>
 
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $course = $courses[$i] ?>
-                    <a href="/admin/courses/<?php echo e($course->id); ?>/edit"> <h1 style="color:red"> <?php echo e($course->name); ?> </h1><</a>
+                    <a href="/admin/courses/<?php echo e($course->id); ?>/edit"> <h1 style="color:red"> <?php echo e($course->name); ?> </h1></a>
                     <h4> <?php echo e($course->teacher); ?> </h2>
                     <h4> <?php echo e($course->date); ?> </h2>
                     <h4> <?php echo e($course->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($course->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -52,6 +58,9 @@
                     <h4> <?php echo e($course->teacher); ?> </h2>
                     <h4> <?php echo e($course->date); ?> </h2>
                     <h4> <?php echo e($course->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($course->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
                 </div>
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
@@ -60,6 +69,9 @@
                     <h4> <?php echo e($course->teacher); ?> </h2>
                     <h4> <?php echo e($course->date); ?> </h2>
                     <h4> <?php echo e($course->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($course->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -73,6 +85,9 @@
                 <h4> <?php echo e($course->teacher); ?> </h2>
                 <h4> <?php echo e($course->date); ?> </h2>
                 <h4> <?php echo e($course->text); ?> </h2>
+                    <div style="float:left">
+                        <img src="/images/<?php echo e($course->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                    </div>
                 <?php $i += 1 ?>
             </div>
         </div>

@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <pre>
-    <fieldset style="border: 2px solid white">
+    <fieldset style="border: 2px solid white"></fieldset>
     <form method="POST" action="/admin/courses/update/{{$course->id}}" enctype="multipart/form-data">
         {{csrf_field()}}
       <input type="hidden" name="_method" value="POST">
@@ -22,13 +21,21 @@
         <input type  = "file" name="picture" style="color:white" value="{{$course->picture}}">
 
         <input type = "submit" value="به روز رسانی دوره" class="btn btn-primary">
-        </form>
+        </pre>
+    </form>
+    <pre>
         <form method="DELETE" action="/admin/courses/delete/{{$course->id}}">
             <input type="submit" value="حذف کردن دوره" class="btn btn-info">
         </form>
-
-        </pre>
-
-
+    </pre>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </fieldset>
 @endsection

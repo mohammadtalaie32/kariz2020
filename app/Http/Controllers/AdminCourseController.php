@@ -107,9 +107,9 @@ class AdminCourseController extends Controller
     {
         //
         $course  = Course::find($id);
-        if($course['picture'] != 'Null') {
-            unlink('images/' . $course->picture);
-        }
+//        if($course['picture'] != 'Null') {
+//            unlink('images/' . $course->picture);
+//        }
         $course->delete();
         return redirect('/admin/courses');
     }
