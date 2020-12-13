@@ -2,7 +2,7 @@
     <form method = "POST" action="/admin/courses/searched">
         <?php echo e(csrf_field()); ?>
 
-        <input type="text" name="searched_course" placeholder="نام دوره را سرج کنید" size="40">
+        <input  type="text" name="searched_course" placeholder="نام دوره را جستجو کنید" size="50">
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
 

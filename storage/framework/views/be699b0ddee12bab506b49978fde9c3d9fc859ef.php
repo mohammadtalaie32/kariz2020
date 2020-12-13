@@ -3,13 +3,14 @@
     <div>
         <h1 style="text-align:center;color:white">برای ویرایش دوره ها روی نام دوره کلیک کنید</h1>
     </div>
+    <br>
     <?php $__currentLoopData = $searched_courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searched_course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div style = "background-color:purple;border: 1px solid black ">
             <img src="/images/<?php echo e($searched_course->picture); ?>" height="10%" width="10%" alt="NO PHOTO" style="float:left">
             <a href = "/admin/courses/<?php echo e($searched_course->id); ?>/edit"><h1 style="color:red"> <?php echo e($searched_course->name); ?> </h1></a>
-            <h4> <?php echo e($searched_course->teacher); ?> </h2>
-            <h4> <?php echo e($searched_course->date); ?> </h2>
-                <h4> <?php echo e($searched_course->text); ?> </h2>
+            <h4 style="color:white"> <?php echo e($searched_course->teacher); ?> </h2>
+            <h4 style="color: white"> <?php echo e($searched_course->date); ?> </h2>
+                <h4 style="color: white"> <?php echo e($searched_course->text); ?> </h2>
 
 
     </div>
