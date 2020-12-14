@@ -119,6 +119,9 @@ class AdminCourseController extends Controller
         $courses = Course::all();
         if($input['searched_course'] != null){
             $searched_courses = $courses->where('name','=',$input['searched_course']);
+            if(count($searched_courses) == 0 ){
+                $searched_courses = $courses->where('teacher','=',$input['searched_course']);
+            }
             return view('admin.courses.search',compact('searched_courses'));
         }
         else{
