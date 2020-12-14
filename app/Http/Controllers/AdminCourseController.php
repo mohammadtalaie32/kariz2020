@@ -117,17 +117,30 @@ class AdminCourseController extends Controller
     public function search(Request $request){
         $input = $request->all();
         $courses = Course::all();
-        if($input['searched_course'] != null){
-            $searched_courses = $courses->where('name','=',$input['searched_course']);
-            if(count($searched_courses) == 0 ){
-                $searched_courses = $courses->where('teacher','=',$input['searched_course']);
+//        if($input['searched_course'] != null){
+//            $searched_courses = $courses->where('name','=',$input['searched_course']);
+//            if(count($searched_courses) == 0 ){
+//                $searched_courses = $courses->where('teacher','=',$input['searched_course']);
+//            }
+//            return view('admin.courses.search',compact('searched_courses'));
+//        }
+//        else{
+//            $searched_courses = $courses->where('name','=',$input['searched_course']);
+//            return view('admin.courses.search',compact('searched_courses'));
+//        }
+        $searched_courses = [];
+        $i = 0;
+        if($input['searched_course'] != null) {
+            foreach ($courses as $course) {
+                if (str_contains($course['name'], $input['searched_course']) or (str_contains($course['teacher'], $input['searched_course'])) or str_contains($input['searched_course'],$course['name']) or str_contains($input['searched_course'],$course['teacher'])) {
+                    $searched_courses[$i] = $course;
+                    $i += 1;
+                }
             }
             return view('admin.courses.search',compact('searched_courses'));
         }
-        else{
-            $searched_courses = $courses->where('name','=',$input['searched_course']);
-            return view('admin.courses.search',compact('searched_courses'));
+        else {
+            return view('admin.courses.search', compact('searched_courses'));
         }
-
     }
 }
