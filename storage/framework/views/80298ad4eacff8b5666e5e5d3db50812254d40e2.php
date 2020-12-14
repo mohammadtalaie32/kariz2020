@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection("content"); ?>
     <form method = "POST" action="/admin/courses/searched">
         <?php echo e(csrf_field()); ?>

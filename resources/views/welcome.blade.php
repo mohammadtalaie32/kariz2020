@@ -35,6 +35,41 @@
   ======================================================= -->
 </head>
 
+<style>
+    .jumbotron {
+    position:relative;
+    overflow:hidden;
+    }
+
+    .jumbotron .container {
+    position:relative;
+    z-index:2;
+    
+    background:rgba(0,0,0,0.2);
+    padding:2rem;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:3px;
+    }
+
+    .jumbotron-background {
+    object-fit:cover;
+    font-family: 'object-fit: cover;';
+    position:absolute;
+    top:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    }
+
+    img.blur {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+
+    }
+</style>
+
 <body>
 
 <!--==========================
@@ -69,6 +104,26 @@ Header
 <!--==========================
 Intro Section
 ============================-->
+
+<div class="jumbotron jumbotron-fluid bg-dark">
+  
+    <div class="jumbotron-background">
+      <img src="{{ asset("img/mii1.jpg") }}" class="blur "صث>
+    </div>
+  
+    <div class="container text-white" style="margin-top: 9%">
+  
+      <h1 class="display-4">شبکه اموزشی کاریز</h1>
+      <p class="lead">مرجع تخصصی آموزش جهت فارسی زبانان کانادا</p>
+      {{-- <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> --}}
+    </div>
+</div>
+    
+
+
+
 
 <section  class="clearfix" style="background-color:deepskyblue;">
     <div class="container" style="background-color:deepskyblue;">

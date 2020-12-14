@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
     <fieldset style="border: 2px solid lightgray ">
     <form method="POST" action="/admin/courses/store" enctype="multipart/form-data">

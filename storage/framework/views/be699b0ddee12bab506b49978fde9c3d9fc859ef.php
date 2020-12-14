@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
 <?php if(count($searched_courses) > 0): ?>
     <div>

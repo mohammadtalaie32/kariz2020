@@ -57,6 +57,7 @@
                     <?php $book = $books[$i] ?>
                     <h2> <?php echo e($book->name); ?> </h2>
                     <h4> <?php echo e($book->price); ?> </h2>
+                        <h4><?php if($book->category): ?> <?php echo e($book->category->name); ?> <?php endif; ?></h4>
                     <h4> <?php echo e($book->date); ?> </h2>
                     <h4> <?php echo e($book->text); ?> </h2>
                     <?php $i += 1 ?>
