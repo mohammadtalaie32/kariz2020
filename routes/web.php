@@ -20,17 +20,18 @@ use App\Http\Controllers\AdminCourseController;
 
 
 // Admin Routes Here!
-Route::get('/admin' , [AdminController::class , 'index'])->middleware(IsAdminMiddleware::class);
-Route::get('admin/courses', [AdminController::class, 'courses'])->middleware(IsAdminMiddleware::class);
-Route::get('admin/books' , [AdminController::class , 'books'])->middleware(IsAdminMiddleware::class);
-Route::get('admin/feeds' , [AdminController::class , 'feeds'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/create',[AdminCourseController::class , 'create'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/store',[AdminCourseController::class , 'store'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/{id}/edit',[AdminCourseController::class , 'edit'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/update/{id}',[AdminCourseController::class,'update'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/delete/{id}',[AdminCourseController::class , 'destroy'])->middleware(IsAdminMiddleware::class);
-Route::any('/admin/courses/searched',[AdminCourseController::class,'search'])->middleware(IsAdminMiddleware::class);
-
+Route::middleware(['IsAdminMiddleware'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('admin/courses', [AdminController::class, 'courses']);
+    Route::get('admin/books', [AdminController::class, 'books']);
+    Route::get('admin/feeds', [AdminController::class, 'feeds']);
+    Route::any('/admin/courses/create', [AdminCourseController::class, 'create']);
+    Route::any('/admin/courses/store', [AdminCourseController::class, 'store']);
+    Route::any('/admin/courses/{id}/edit', [AdminCourseController::class, 'edit']);
+    Route::any('/admin/courses/update/{id}', [AdminCourseController::class, 'update']);
+    Route::any('/admin/courses/delete/{id}', [AdminCourseController::class, 'destroy']);
+    Route::any('/admin/courses/searched', [AdminCourseController::class, 'search']);
+});
 // End Of Admin Routes
 
 Route::get('/', function()  {
