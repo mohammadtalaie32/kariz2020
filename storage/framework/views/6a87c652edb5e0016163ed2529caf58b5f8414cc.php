@@ -1,18 +1,23 @@
-
-
 <?php $__env->startSection("content"); ?>
+    <form method = "POST" action="/admin/feeds/searched">
+        <?php echo e(csrf_field()); ?>
+
+        <input  type="text" name="searched_feed" placeholder="عنوان اطلاعیه را جستجو کنید" size="50">
+        <input type="submit" value="جستجو" class="btn btn-primary">
+    </form>
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <h5>دکمه 1</h5>
-        </div> 
-        
-        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <h5>دکمه 2</h5>
-        </div> 
+            <a href="/admin/feeds/create"> <h5>ایجاد اطلاعیه جدید</h5></a>
+        </div>
+
+
     </div>
     <br>
-    <?php 
+    <div>
+        <h1 style="text-align:center;color:white">برای ویرایش اطلاعیه ها روی عنوان اطلاعیه کلیک کنید</h1>
+    </div>
+    <?php
         $i = 0;
     ?>
     <?php if($feed_count % 2 == 0): ?>
@@ -21,25 +26,31 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
-                    <h2> <?php echo e($feed->title); ?> </h2>
+                        <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
                     <h4> <?php echo e($feed->content); ?> </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($feed->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
-                </div> 
-            
+                </div>
+
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
-                    <h2> <?php echo e($feed->title); ?> </h2>
+                        <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
                     <h4> <?php echo e($feed->content); ?> </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($feed->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
-                </div> 
+                </div>
             </div>
             <BR>
-            
-                
+
+
         <?php endwhile; ?>
     <?php else: ?>
         <?php while($i != $feed_count - 1): ?>
@@ -47,20 +58,26 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
-                    <h2> <?php echo e($feed->title); ?> </h2>
+                        <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
                     <h4> <?php echo e($feed->content); ?> </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($feed->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
-                </div> 
+                </div>
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
-                    <h2> <?php echo e($feed->title); ?> </h2>
+                        <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
                     <h4> <?php echo e($feed->content); ?> </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
+                        <div style="float:left">
+                            <img src="/images/<?php echo e($feed->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                        </div>
                     <?php $i += 1 ?>
-                </div> 
+                </div>
             </div>
             <br>
         <?php endwhile; ?>
@@ -68,16 +85,20 @@
             <div class="offset-md-1"></div>
             <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                 <?php $feed = $feeds[$i] ?>
-                <h2> <?php echo e($feed->title); ?> </h2>
+                    <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
                 <h4> <?php echo e($feed->content); ?> </h2>
                 <h4> <?php echo e($feed->date); ?> </h2>
                 <h4> <?php echo e($feed->text); ?> </h2>
+                    <div style="float:left">
+                        <img src="/images/<?php echo e($feed->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                    </div>
                 <?php $i += 1 ?>
-            </div> 
+            </div>
         </div>
     <?php endif; ?>
-    
-    
+
+
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make("layouts.admin", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/admin/feeds.blade.php ENDPATH**/ ?>

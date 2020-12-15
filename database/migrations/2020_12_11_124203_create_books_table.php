@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("price");
-            $table->string("picture");
+            $table->string("picture")->default('Null');
             $table->timestamps();
         });
     }

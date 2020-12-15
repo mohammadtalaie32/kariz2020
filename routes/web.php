@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminBookController;
+use App\Http\Controllers\AdminFeedController;
 use App\Http\Middleware\IsAdminMiddleware;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +33,18 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
     Route::any('/admin/courses/update/{id}', [AdminCourseController::class, 'update']);
     Route::any('/admin/courses/delete/{id}', [AdminCourseController::class, 'destroy']);
     Route::any('/admin/courses/searched', [AdminCourseController::class, 'search']);
+    Route::any('/admin/books/create',[AdminBookController::class,'create']);
+    Route::any('/admin/books/store',[AdminBookController::class,'store']);
+    Route::any('/admin/books/{id}/edit',[AdminBookController::class,'edit']);
+    Route::any('/admin/books/update/{id}',[AdminBookController::class,'update']);
+    Route::any('/admin/books/delete/{id}',[AdminBookController::class,'destroy']);
+    Route::any('/admin/books/searched',[AdminBookController::class,'search']);
+    Route::any('/admin/feeds/create',[AdminFeedController::class,'create']);
+    Route::any('/admin/feeds/store',[AdminFeedController::class,'store']);
+    Route::any('/admin/feeds/{id}/edit',[AdminFeedController::class,'edit']);
+    Route::any('/admin/feeds/update/{id}',[AdminFeedController::class,'update']);
+    Route::any('/admin/feeds/delete/{id}',[AdminFeedController::class,'destroy']);
+    Route::any('/admin/feeds/searched',[AdminFeedController::class,'search']);
 });
 // End Of Admin Routes
 

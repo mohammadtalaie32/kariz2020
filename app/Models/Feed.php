@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feed extends Model
 {
-
+    protected $fillable=['title','content','picture'];
     use HasFactory;
 }
