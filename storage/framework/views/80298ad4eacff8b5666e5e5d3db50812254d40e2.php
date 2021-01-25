@@ -1,10 +1,14 @@
-
-
 <?php $__env->startSection("content"); ?>
     <form method = "POST" action="/admin/courses/searched">
         <?php echo e(csrf_field()); ?>
 
-        <input  type="text" name="searched_course" placeholder="نام دوره یا نام مدرس را جستجو کنید" size="50">
+        <input  type="text" name="searched_course" placeholder="نام دوره یا نام مدرس را جستجو کنید" size="50" style="height:30%;border: 1px solid gray;Border-radius:5px" name="browser" list="browsers">
+        <datalist id="browsers">
+            <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option><?php echo e($course->name); ?></option>
+                <option><?php echo e($course->teacher); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </datalist>
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
 

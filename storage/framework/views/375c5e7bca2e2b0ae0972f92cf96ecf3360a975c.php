@@ -5,7 +5,7 @@
         </div>
         <br>
         <?php $__currentLoopData = $searched_books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searched_book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div style = "background-color:purple;border: 1px solid black ">
+            <div style = "background-color:rebeccapurple;border: 1px solid black;Border-radius:10px;padding:50px">
                 <img src="/images/<?php echo e($searched_book->picture); ?>" height="10%" width="10%" alt="NO PHOTO" style="float:left">
                 <a href = "/admin/books/<?php echo e($searched_book->id); ?>/edit"><h1 style="color:red"> <?php echo e($searched_book->name); ?> </h1></a>
                 <h4 style="color:white"> <?php echo e($searched_book->price); ?> </h2>
@@ -16,7 +16,7 @@
 
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php else: ?>
-        <h2 style="color:white">هیچ کتابی  پیدا با این نام پیدا نشد</h2>
+        <h2 style="color:white">هیچ کتابی   با این نام پیدا نشد</h2>
     <?php endif; ?>
 
 

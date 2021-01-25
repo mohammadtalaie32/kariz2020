@@ -44,7 +44,7 @@
     .jumbotron .container {
     position:relative;
     z-index:2;
-    
+
     background:rgba(0,0,0,0.2);
     padding:2rem;
     border:1px solid rgba(0,0,0,0.1);
@@ -106,13 +106,13 @@ Intro Section
 ============================-->
 
 <div class="jumbotron jumbotron-fluid bg-dark">
-  
+
     <div class="jumbotron-background">
       <img src="{{ asset("img/mii1.jpg") }}" class="blur "صث>
     </div>
-  
+
     <div class="container text-white" style="margin-top: 9%">
-  
+
       <h1 class="display-4">شبکه اموزشی کاریز</h1>
       <p class="lead">مرجع تخصصی آموزش جهت فارسی زبانان کانادا</p>
       {{-- <hr class="my-4">
@@ -120,7 +120,7 @@ Intro Section
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> --}}
     </div>
 </div>
-    
+
 
 
 
@@ -131,9 +131,9 @@ Intro Section
         <div class="intro-img">
             <img src="img/intro-img.svg" alt="" class="img-fluid">
         </div>
-            
+
         <div class="intro-info " style="background-color:deepskyblue;">
-           
+
 
         </div>
 

@@ -48,6 +48,7 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
 });
 // End Of Admin Routes
 
+
 Route::get('/', function()  {
     return view('welcome');
 });

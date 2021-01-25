@@ -5,10 +5,16 @@
         </div>
         <br>
         <?php $__currentLoopData = $searched_feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searched_feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div style = "background-color:purple;border: 1px solid black ">
+            <div style = "background-color:rebeccapurple;border: 1px solid black ;Border-radius:10px;padding:50px">
                 <img src="/images/<?php echo e($searched_feed->picture); ?>" height="10%" width="10%" alt="NO PHOTO" style="float:left">
                 <a href = "/admin/feeds/<?php echo e($searched_feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($searched_feed->title); ?> </h1></a>
-                <h4 style="color:white"> <?php echo e($searched_feed->content); ?> </h2>
+                <?php
+                $string =  $searched_feed->content;
+                $len = strlen($string);
+                $string = substr($string,0,(intdiv($len,3)));
+
+                ?>
+                <p style="color:white;word-wrap:break-word"> <?php echo e($string); ?>... </p>
 
 
 

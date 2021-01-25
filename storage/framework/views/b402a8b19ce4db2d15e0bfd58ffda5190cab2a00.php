@@ -20,6 +20,7 @@
     <link href=<?php echo e(asset('admin_panel/demo/demo.css')); ?> rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('font.css')); ?>"/>
+
 </head>
 
 <style>

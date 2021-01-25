@@ -3,7 +3,12 @@
 @section("content")
     <form method = "POST" action="/admin/books/searched">
         {{csrf_field()}}
-        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید" size="50">
+        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید" size="50" style="height:30%;border:1px solid gray;Border-radius:5px" name="browser" list="browsers">
+        <datalist id="browsers">
+        @foreach($books as $book)
+            <option>{{$book->name}}</option>
+            @endforeach
+        </datalist>
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
     <div class="row container mb-3">

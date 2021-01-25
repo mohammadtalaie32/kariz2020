@@ -111,20 +111,32 @@ class AdminBookController extends Controller
         return redirect('/admin/books');
     }
 
+    public function keyword($string1,$string2){
+        similar_text($string1,$string2,$percent);
+        if($percent >= 80){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function search(Request $request){
+        $request->validate(['searched_book'=>'required']);
         $input = $request->all();
         $books = Book::all();
         $searched_books = [];
         $i = 0;
         if($input['searched_book'] != null) {
             foreach ($books as $book) {
-                if (str_contains($book['name'], $input['searched_book']) or   (str_contains($input['searched_book'],$book['name']))) {
+                if (str_contains($book['name'], $input['searched_book']) or   (str_contains($input['searched_book'],$book['name'])) or $this->keyword($input['searched_book'],$book['name'])) {
                     $searched_books[$i] = $book;
                     $i += 1;
                 }
             }
             return view('admin.books.search',compact('searched_books'));
         }
+
         else {
             return view('admin.books.search', compact('searched_books'));
         }

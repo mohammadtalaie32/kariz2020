@@ -108,24 +108,38 @@ class AdminFeedController extends Controller
         return redirect('/admin/feeds');
     }
 
-    public function search(Request $request){
+    public function keyword($string1,$string2){
+        similar_text($string1,$string2,$percent);
+        if($percent >= 80){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+    public function search(Request $request)
+    {
+        $request->validate(['searched_feed'=>'required']);
         $input = $request->all();
         $feeds = Feed::all();
         $searched_feeds = [];
         $i = 0;
-        if($input['searched_feed'] != null) {
+        //$List = preg_split('/[-\s ]/',$input['searched_feed']);
+
+        if ($input['searched_feed'] != null) {
             foreach ($feeds as $feed) {
-                if (str_contains($feed['title'], $input['searched_feed']) or   (str_contains($input['searched_feed'],$feed['title']))) {
+                if (str_contains($feed['title'], $input['searched_feed']) or (str_contains($input['searched_feed'], $feed['title'])) or $this->keyword($input['searched_feed'],$feed['title'])) {
                     $searched_feeds[$i] = $feed;
                     $i += 1;
                 }
             }
-            return view('admin.feeds.search',compact('searched_feeds'));
-        }
-        else {
+            return view('admin.feeds.search', compact('searched_feeds'));
+        } else {
             return view('admin.feeds.search', compact('searched_feeds'));
         }
-
 
     }
 }

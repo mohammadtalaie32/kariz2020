@@ -114,7 +114,18 @@ class AdminCourseController extends Controller
         return redirect('/admin/courses');
     }
 
+    public function keyword($string1,$string2){
+        similar_text($string1,$string2,$percent);
+        if($percent >= 80){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function search(Request $request){
+        $request->validate(['searched_course'=>'required']);
         $input = $request->all();
         $courses = Course::all();
 //        if($input['searched_course'] != null){
@@ -132,7 +143,7 @@ class AdminCourseController extends Controller
         $i = 0;
         if($input['searched_course'] != null) {
             foreach ($courses as $course) {
-                if (str_contains($course['name'], $input['searched_course']) or (str_contains($course['teacher'], $input['searched_course'])) or str_contains($input['searched_course'],$course['name']) or str_contains($input['searched_course'],$course['teacher'])) {
+                if (str_contains($course['name'], $input['searched_course']) or (str_contains($course['teacher'], $input['searched_course'])) or str_contains($input['searched_course'],$course['name']) or str_contains($input['searched_course'],$course['teacher']) or $this->keyword($input['searched_course'],$course['name']) or $this->keyword($input['searched_course'],$course['teacher'])) {
                     $searched_courses[$i] = $course;
                     $i += 1;
                 }

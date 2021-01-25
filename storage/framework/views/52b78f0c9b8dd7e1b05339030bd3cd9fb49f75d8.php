@@ -1,10 +1,13 @@
-
-
 <?php $__env->startSection("content"); ?>
     <form method = "POST" action="/admin/books/searched">
         <?php echo e(csrf_field()); ?>
 
-        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید" size="50">
+        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید" size="50" style="height:30%;border:1px solid gray;Border-radius:5px" name="browser" list="browsers">
+        <datalist id="browsers">
+        <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option><?php echo e($book->name); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </datalist>
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
     <div class="row container mb-3">

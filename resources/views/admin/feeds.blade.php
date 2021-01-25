@@ -3,7 +3,12 @@
 @section("content")
     <form method = "POST" action="/admin/feeds/searched">
         {{csrf_field()}}
-        <input  type="text" name="searched_feed" placeholder="عنوان اطلاعیه را جستجو کنید" size="50">
+        <input  type="text" name="searched_feed" placeholder="عنوان اطلاعیه را جستجو کنید" size="50" style="height:30%;border:1px solid gray;Border-radius:5px" name="browser" list="browsers">
+         <datalist id="browsers">
+             @foreach($feeds as $feed)
+             <option>{{$feed->title}}</option>
+             @endforeach
+         </datalist>
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
     <div class="row container mb-3">

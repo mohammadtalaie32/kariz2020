@@ -20,6 +20,7 @@
     <link href={{asset('admin_panel/demo/demo.css')}} rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="{{asset('font.css')}}"/>
+
 </head>
 
 <style>

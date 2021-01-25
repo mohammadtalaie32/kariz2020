@@ -6,7 +6,7 @@
         </div>
         <br>
         @foreach($searched_books as $searched_book)
-            <div style = "background-color:purple;border: 1px solid black ">
+            <div style = "background-color:rebeccapurple;border: 1px solid black;Border-radius:10px;padding:50px">
                 <img src="/images/{{$searched_book->picture}}" height="10%" width="10%" alt="NO PHOTO" style="float:left">
                 <a href = "/admin/books/{{$searched_book->id}}/edit"><h1 style="color:red"> {{ $searched_book->name }} </h1></a>
                 <h4 style="color:white"> {{ $searched_book->price }} </h2>
@@ -17,7 +17,7 @@
 
         @endforeach
     @else
-        <h2 style="color:white">هیچ کتابی  پیدا با این نام پیدا نشد</h2>
+        <h2 style="color:white">هیچ کتابی   با این نام پیدا نشد</h2>
     @endif
 
 
