@@ -21,7 +21,7 @@
         <input type  = "file" name="picture" style="color:white" value="<?php echo e($book->picture); ?>">
         <br>
         <br>
-        <input type = "submit" value="به روز رسانی کتاب  " class="btn btn-primary" style="font-size:200%;float:right">
+        <input type = "submit" value="به روز رسانی کتاب  " class="btn btn-primary" style="font-size:200%;float:right;width:100%">
         <br>
         </form>
         <br>
@@ -29,9 +29,9 @@
         <form method="DELETE" action="/admin/books/delete/<?php echo e($book->id); ?>">
             <?php echo e(csrf_field()); ?>
 
-            <input type="submit" value="حذف کردن کتاب " class="btn btn-info" style="font-size:200%;float:right">
+            <input type="submit" value="حذف کردن کتاب " class="btn btn-info" style="font-size:200%;float:right;width:100%">
         </form>
-
+        <br><br><br><br>
         <?php if(count($errors) > 0): ?>
             <div class="alert alert-danger">
                 <ul>

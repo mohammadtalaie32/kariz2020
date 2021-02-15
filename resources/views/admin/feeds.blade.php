@@ -33,7 +33,13 @@
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/{{$feed->id}}/edit"><h1 style="color:red"> {{ $feed->title }} </h1></a>
-                    <h4> {{ $feed->content }} </h2>
+                        <?php
+                        $string =  $feed->content;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                    <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                     <h4> {{ $feed->date }} </h2>
                     <h4> {{ $feed->text }} </h2>
                         <div style="float:left">
@@ -45,7 +51,13 @@
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/{{$feed->id}}/edit"><h1 style="color:red"> {{ $feed->title }} </h1></a>
-                    <h4> {{ $feed->content }} </h2>
+                        <?php
+                        $string =  $feed->content;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                     <h4> {{ $feed->date }} </h2>
                     <h4> {{ $feed->text }} </h2>
                         <div style="float:left">
@@ -65,7 +77,13 @@
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/{{$feed->id}}/edit"><h1 style="color:red"> {{ $feed->title }} </h1></a>
-                    <h4> {{ $feed->content }} </h2>
+                        <?php
+                        $string =  $feed->content;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                     <h4> {{ $feed->date }} </h2>
                     <h4> {{ $feed->text }} </h2>
                         <div style="float:left">
@@ -76,7 +94,13 @@
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/{{$feed->id}}/edit"><h1 style="color:red"> {{ $feed->title }} </h1></a>
-                    <h4> {{ $feed->content }} </h2>
+                        <?php
+                        $string =  $feed->content;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                     <h4> {{ $feed->date }} </h2>
                     <h4> {{ $feed->text }} </h2>
                         <div style="float:left">
@@ -92,7 +116,13 @@
             <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                 <?php $feed = $feeds[$i] ?>
                     <a href = "/admin/feeds/{{$feed->id}}/edit"><h1 style="color:red"> {{ $feed->title }} </h1></a>
-                <h4> {{ $feed->content }} </h2>
+                    <?php
+                    $string =  $feed->content;
+                    $len = strlen($string);
+                    $string = substr($string,0,(intdiv($len,3)));
+
+                    ?>
+                    <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                 <h4> {{ $feed->date }} </h2>
                 <h4> {{ $feed->text }} </h2>
                     <div style="float:left">

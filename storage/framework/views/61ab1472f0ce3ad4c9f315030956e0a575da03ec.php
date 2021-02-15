@@ -93,6 +93,7 @@ Header
                 <li><a href="#team">تیم ما</a></li>
                 <li><a href="">امکانات</a></li>
                 <li class="active"><a href="#intro">خانه</a></li>
+                <li><a href="/login">ورود یا عضویت</a></li>
             </ul>
         </nav>
         <!-- .main-nav -->
@@ -876,7 +877,7 @@ Footer
                     <h4 class=" text-warning font-italic">خبرنامه ی ما </h4>
                     <p>تیم ما یک تیم بسیار حرفه ای است که با تکیه به آخرین وضعیت و قوانین دنیا پیش میرود و خیلی مشتاق هست که در مسائل بیزینس با شما همکاری کند.</p>
                     <form action="" method="post">
-                        <input type="email" name="email">
+                        <input type="email" name="email" style="width:100%">
                         <input type="submit" value="ارسال">
                     </form>
                 </div>

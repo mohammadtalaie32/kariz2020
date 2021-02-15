@@ -30,7 +30,7 @@
             {{csrf_field()}}
             <input type="submit" value="حذف کردن کتاب " class="btn btn-info" style="font-size:200%;float:right">
         </form>
-
+        <br><br><br><br>
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>

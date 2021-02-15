@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-    <fieldset style="border: 2px solid lightgray;padding:30px;max-width:100%">
+    <fieldset style="border: 2px solid lightgray;padding:30px;max-width:100%;">
         <form method="POST" action="/admin/books/store" enctype="multipart/form-data">
             <?php echo e(csrf_field()); ?>
 
@@ -18,7 +18,7 @@
         <input type  = "file" name="picture" style="color:white" >
         <br>
         <br>
-        <input type = "submit" value="ایجاد کتاب  " class="btn btn-primary" style="font-size:200%">
+        <input type = "submit" value="ایجاد کتاب  " class="btn btn-primary" style="font-size:200%;max-width:100%">
         <br>
         </form>
         <?php if(count($errors) > 0): ?>

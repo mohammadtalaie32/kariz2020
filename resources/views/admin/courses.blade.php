@@ -40,7 +40,13 @@
                     <a href = "/admin/courses/{{$course->id}}/edit"><h1 style="color:red"> {{ $course->name }} </h1></a>
                     <h4> {{ $course->teacher }} </h2>
                     <h4> {{ $course->date }} </h2>
-                    <h4> {{ $course->text }} </h2>
+                        <?php
+                        $string =  $course->text;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                    <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                         <div style="float:left">
                             <img src="/images/{{$course->picture}}" height="100%" width="100%" alt="NO PHOTO">
                         </div>
@@ -52,7 +58,13 @@
                     <a href="/admin/courses/{{$course->id}}/edit"> <h1 style="color:red"> {{ $course->name }} </h1></a>
                     <h4> {{ $course->teacher }} </h2>
                     <h4> {{ $course->date }} </h2>
-                    <h4> {{ $course->text }} </h2>
+                        <?php
+                        $string =  $course->text;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                         <div style="float:left">
                             <img src="/images/{{$course->picture}}" height="100%" width="100%" alt="NO PHOTO">
                         </div>
@@ -72,7 +84,13 @@
                     <a href="/admin/courses/{{$course->id}}/edit"><h1 style="color:red"> {{ $course->name }} </h1></a>
                     <h4> {{ $course->teacher }} </h2>
                     <h4> {{ $course->date }} </h2>
-                    <h4> {{ $course->text }} </h2>
+                        <?php
+                        $string =  $course->text;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                         <div style="float:left">
                             <img src="/images/{{$course->picture}}" height="100%" width="100%" alt="NO PHOTO">
                         </div>
@@ -83,7 +101,13 @@
                     <a href="/admin/courses/{{$course->id}}/edit"><h1 style="color:red"> {{ $course->name }} </h1></a>
                     <h4> {{ $course->teacher }} </h2>
                     <h4> {{ $course->date }} </h2>
-                    <h4> {{ $course->text }} </h2>
+                        <?php
+                        $string =  $course->text;
+                        $len = strlen($string);
+                        $string = substr($string,0,(intdiv($len,3)));
+
+                        ?>
+                        <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                         <div style="float:left">
                             <img src="/images/{{$course->picture}}" height="100%" width="100%" alt="NO PHOTO">
                         </div>
@@ -99,7 +123,13 @@
                 <a href="/admin/courses/{{$course->id}}/edit"><h1 style="color:red"> {{ $course->name }} </h1></a>
                 <h4> {{ $course->teacher }} </h2>
                 <h4> {{ $course->date }} </h2>
-                <h4> {{ $course->text }} </h2>
+                    <?php
+                    $string =  $course->text;
+                    $len = strlen($string);
+                    $string = substr($string,0,(intdiv($len,3)));
+
+                    ?>
+                    <h4 style="word-wrap:break-word"> {{ $string }}... </h2>
                     <div style="float:left">
                         <img src="/images/{{$course->picture}}" height="100%" width="100%" alt="NO PHOTO">
                     </div>
