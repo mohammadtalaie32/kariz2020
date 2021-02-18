@@ -10,6 +10,11 @@
         </datalist>
         <input type="submit" value="جستجو" class="btn btn-primary">
     </form>
+
+
+
+
+
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
