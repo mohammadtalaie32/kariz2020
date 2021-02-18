@@ -20,7 +20,7 @@
             <form method = "POST" class="form w-100" action="/admin/courses/searched">
                 <?php echo e(csrf_field()); ?>
 
-                <input type="text" name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید سپس دکمه enter را فشار دهید" lang="fa" dir="rtl" class="form-control input-group-lg w-100"/>
+                <input type="text" style="background-color: white;border:none;border-radius: 5px;line-height: 40px;padding:5px;padding-right: 10px" name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید سپس دکمه enter را فشار دهید" lang="fa" dir="rtl" class="shadow-lg w-100"/>
                 <datalist id="browsers">
                     <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option><?php echo e($course->name); ?></option>
