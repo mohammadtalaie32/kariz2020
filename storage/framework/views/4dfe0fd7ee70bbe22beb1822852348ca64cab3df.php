@@ -123,4 +123,4 @@ h1,h2,h3,h4,h5,h6,p,span {
 </body>
 </html>
 
-<?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/layouts/admin.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\kariz2020\resources\views/layouts/admin.blade.php ENDPATH**/ ?>

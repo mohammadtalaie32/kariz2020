@@ -1,32 +1,43 @@
 @extends("layouts.admin")
 
 @section("content")
-    <form method = "POST" action="/admin/courses/searched">
-        {{csrf_field()}}
-        <input  type="text" name="searched_course" placeholder="نام دوره یا نام مدرس را جستجو کنید" size="50" style="height:30%;border: 1px solid gray;Border-radius:5px" name="browser" list="browsers">
-        <datalist id="browsers">
-            @foreach($courses as $course)
-                <option>{{$course->name}}</option>
-                <option>{{$course->teacher}}</option>
-            @endforeach
-        </datalist>
-        <input type="submit" value="جستجو" class="btn btn-primary">
-    </form>
-
-    <!-- -->
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
         </div>
 
-{{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
-{{--            <h5>دکمه 2</h5>--}}
-{{--        </div>--}}
+        {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
+        {{--            <h5>دکمه 2</h5>--}}
+        {{--        </div>--}}
     </div>
+
+    <!-- -->
     <br>
-    <div>
-       <h1 style="text-align:center;color:white">برای ویرایش دوره ها روی نام دوره کلیک کنید</h1>
+
+
+    <div class="row mb-3 row">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10 pt-3 pb-1 input-group">
+            <form method = "POST" class="form w-100" action="/admin/courses/searched">
+                {{csrf_field()}}
+                <input type="text" name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید سپس دکمه enter را فشار دهید" lang="fa" dir="rtl" class="form-control input-group-lg w-100"/>
+                <datalist id="browsers">
+                    @foreach($courses as $course)
+                        <option>{{$course->name}}</option>
+                        <option>{{$course->teacher}}</option>
+                    @endforeach
+                </datalist>
+                <input hidden class="float-left" type="submit" value="جستجو" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش دوره ها روی نام دوره کلیک کنید!</h5>
+        </div>
     </div>
     <?php
         $i = 0;

@@ -36,4 +36,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH C:\xampp\htdocs\kariz2020\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\kariz2020\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>
