@@ -109,16 +109,14 @@ Intro Section
 <div class="jumbotron jumbotron-fluid bg-dark">
 
     <div class="jumbotron-background">
-      <img src="{{ asset("img/mii1.jpg") }}" class="blur "صث>
+      <img src="<?php echo e(asset("img/mii1.jpg")); ?>" class="blur "صث>
     </div>
 
     <div class="container text-white" style="margin-top: 9%">
 
       <h1 class="display-4">شبکه اموزشی کاریز</h1>
       <p class="lead">مرجع تخصصی آموزش جهت فارسی زبانان کانادا</p>
-      {{-- <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> --}}
+      
     </div>
 
     <br>
@@ -914,3 +912,4 @@ Footer
 </body>
 
 </html>
+<?php /**PATH C:\wamp64\www\kariz2020\resources\views/welcome.blade.php ENDPATH**/ ?>
