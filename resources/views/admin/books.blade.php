@@ -13,12 +13,12 @@
     </form>
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
-        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <a href="/admin/books/create"><h5>ایجاد کتاب جدید</h5></a>
+        <div>
+            <h6 style="text-align:center;color:white">برای ویرایش کتاب ها روی نام کتاب کلیک کنید</h6>
         </div>
         <br>
-        <div>
-            <h1 style="text-align:center;color:white">برای ویرایش کتاب ها روی نام کتاب کلیک کنید</h1>
+        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+            <a href="/admin/books/create"><h5>ایجاد کتاب جدید</h5></a>
         </div>
 
     </div>
