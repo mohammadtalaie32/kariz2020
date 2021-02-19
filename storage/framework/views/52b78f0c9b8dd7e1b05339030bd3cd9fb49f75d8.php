@@ -1,32 +1,46 @@
 <?php $__env->startSection("content"); ?>
+
+
     <form method = "POST" action="/admin/books/searched">
         <?php echo e(csrf_field()); ?>
 
-        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید" size="50" style="height:30%;border:1px solid gray;Border-radius:5px" name="browser" list="browsers">
+        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید"   name="browser" list="browsers" class="animate">
         <datalist id="browsers">
         <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <option><?php echo e($book->name); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </datalist>
-        <input type="submit" value="جستجو" class="btn btn-primary">
+        <input hidden type="submit" value="جستجو" class="btn btn-primary">
     </form>
 
-
-
-
-
+<br><br><br>
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <a href="/admin/books/create"><h5>ایجاد کتاب جدید</h5></a>
-        </div>
-        <br>
-        <div>
-            <h1 style="text-align:center;color:white">برای ویرایش کتاب ها روی نام کتاب کلیک کنید</h1>
+            <a href="/admin/courses/create"> <h5>ایجاد کتاب جدید</h5></a>
         </div>
 
+        
+        
+        
     </div>
-    <br>
+
+
+
+
+
+    <div class="row mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش کتاب ها روی نام کتاب کلیک کنید!</h5>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
     <?php
         $i = 0;
     ?>
