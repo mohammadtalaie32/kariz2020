@@ -6,10 +6,11 @@
     <!-- -->
     <br>
 
+
             <form method = "POST" action="/admin/courses/searched">
                 <?php echo e(csrf_field()); ?>
 
-                <input style="border:none;" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate offset-md-2">
+                <input type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate">
                 <datalist id="browsers">
                     <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option><?php echo e($course->name); ?></option>
@@ -18,16 +19,16 @@
                 </datalist>
                 <input hidden type="submit" value="جستجو" class="btn btn-primary" >
             </form><br><br>
-            <div class="row container mb-3">
-                <div class="offset-md-1"></div>
-                <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
-                </div>
+    <div class="row container mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+            <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
+        </div>
 
-                
-                
-                
-            </div>
+        
+        
+        
+    </div>
 
 
 
@@ -151,4 +152,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make("layouts.admin", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\kariz2020\resources\views/admin/courses.blade.php ENDPATH**/ ?>
+<?php echo $__env->make("layouts.admin", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\kariz2020\resources\views/admin/courses.blade.php ENDPATH**/ ?>

@@ -1,36 +1,37 @@
 @extends("layouts.admin")
 
 @section("content")
+    <div class="row container mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+            <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
+        </div>
 
-
-
+        {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
+        {{--            <h5>دکمه 2</h5>--}}
+        {{--        </div>--}}
+    </div>
 
     <!-- -->
     <br>
 
-            <form method = "POST" action="/admin/courses/searched">
+
+    <div class="row mb-3 row">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10 pt-3 pb-1 input-group">
+            <form method = "POST" class="form w-100" action="/admin/courses/searched">
                 {{csrf_field()}}
-                <input style="border:none;" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate offset-md-2">
+                <input type="text" style="background-color: white;border:none;border-radius: 5px;line-height: 40px;padding:5px;padding-right: 10px" name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید سپس دکمه enter را فشار دهید" lang="fa" dir="rtl" class="shadow-lg w-100"/>
                 <datalist id="browsers">
                     @foreach($courses as $course)
                         <option>{{$course->name}}</option>
                         <option>{{$course->teacher}}</option>
                     @endforeach
                 </datalist>
-                <input hidden type="submit" value="جستجو" class="btn btn-primary" >
-            </form><br><br>
-            <div class="row container mb-3">
-                <div class="offset-md-1"></div>
-                <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
-                </div>
-
-                {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
-                {{--            <h5>دکمه 2</h5>--}}
-                {{--        </div>--}}
-            </div>
-
-
+                <input hidden class="float-left" type="submit" value="جستجو" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
 
     <div class="row mb-3">
         <div class="offset-md-1"></div>

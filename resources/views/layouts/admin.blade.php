@@ -14,6 +14,7 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href={{asset('admin_panel/css/material-dashboard.css?v=2.1.0')}} rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -27,9 +28,32 @@
 h1,h2,h3,h4,h5,h6,p,span {
     font-family: '20S-Yekan' !important;
 }
+.animate{
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color:whitesmoke;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    float:right;
+    padding-right:1px;
+    margin-right:9%;
+    max-width:100%;
+}
 
+.animate:focus {
+    width: 100%;
+}
 </style>
+
+
 <body style="font-family: '20S-Yekan' !important;" class="dark-edition">
+
 <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
         <!--
@@ -37,6 +61,7 @@ h1,h2,h3,h4,h5,h6,p,span {
 
           Tip 2: you can also add an image using data-image tag
       -->
+
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                 پنل مدیریتی

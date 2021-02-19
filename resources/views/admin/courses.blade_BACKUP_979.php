@@ -8,27 +8,42 @@
     <!-- -->
     <br>
 
+
+<<<<<<< HEAD
+    <div class="row mb-3 row">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10 pt-3 pb-1 input-group">
+            <form method = "POST" class="form-horizontal form w-100" action="/admin/courses/searched">
+                {{csrf_field()}}
+                <input type="text"  name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید" style="font-weight: bolder !important;width: 89.5%;padding-right:20px;line-height:38px;border:1px solid gray;Border-radius:5px"/>
+=======
             <form method = "POST" action="/admin/courses/searched">
                 {{csrf_field()}}
-                <input style="border:none;" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate offset-md-2">
+                <input type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate">
+>>>>>>> 62e463b29d163ca4f21580caec1773bb85ff6be3
                 <datalist id="browsers">
                     @foreach($courses as $course)
                         <option>{{$course->name}}</option>
                         <option>{{$course->teacher}}</option>
                     @endforeach
                 </datalist>
+<<<<<<< HEAD
+                <input type="submit" style="margin:0px !important;" value="جستجو" class="btn btn-primary">
+            </form>
+=======
                 <input hidden type="submit" value="جستجو" class="btn btn-primary" >
             </form><br><br>
-            <div class="row container mb-3">
-                <div class="offset-md-1"></div>
-                <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
-                </div>
+    <div class="row container mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+            <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
+>>>>>>> 62e463b29d163ca4f21580caec1773bb85ff6be3
+        </div>
 
-                {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
-                {{--            <h5>دکمه 2</h5>--}}
-                {{--        </div>--}}
-            </div>
+        {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
+        {{--            <h5>دکمه 2</h5>--}}
+        {{--        </div>--}}
+    </div>
 
 
 
