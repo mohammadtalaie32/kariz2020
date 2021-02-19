@@ -17,17 +17,17 @@
     <div class="row mb-3 row">
         <div class="offset-md-1"></div>
         <div class="col-md-10 pt-3 pb-1 input-group">
-            <form method = "POST" class="form w-100" action="/admin/courses/searched">
+            <form method = "POST" class="form-horizontal form w-100" action="/admin/courses/searched">
                 <?php echo e(csrf_field()); ?>
 
-                <input type="text" style="background-color: white;border:none;border-radius: 5px;line-height: 40px;padding:5px;padding-right: 10px" name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید سپس دکمه enter را فشار دهید" lang="fa" dir="rtl" class="shadow-lg w-100"/>
+                <input type="text"  name="searched_course" placeholder="جهت جستجو نام دوره یا مدرس را وارد نمایید" style="font-weight: bolder !important;width: 89.5%;padding-right:20px;line-height:38px;border:1px solid gray;Border-radius:5px"/>
                 <datalist id="browsers">
                     <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option><?php echo e($course->name); ?></option>
                         <option><?php echo e($course->teacher); ?></option>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </datalist>
-                <input hidden class="float-left" type="submit" value="جستجو" class="btn btn-primary">
+                <input type="submit" style="margin:0px !important;" value="جستجو" class="btn btn-primary">
             </form>
         </div>
     </div>
