@@ -7,9 +7,9 @@
     <?php $__currentLoopData = $searched_courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searched_course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div style = "background-color:rebeccapurple;border: 1px solid black;Border-radius:10px;padding:50px;max-width:100%">
             <img src="/images/<?php echo e($searched_course->picture); ?>" height="10%" width="10%" alt="NO PHOTO" style="float:left">
-            <a href = "/admin/courses/<?php echo e($searched_course->id); ?>/edit"><h1 style="color:red"> <?php echo e($searched_course->name); ?> </h1></a>
-            <h4 style="color:white"> <?php echo e($searched_course->teacher); ?> </h2>
-            <h4 style="color: white"> <?php echo e($searched_course->date); ?> </h2>
+            <a href = "/admin/courses/<?php echo e($searched_course->id); ?>/edit"><h1 style="color:red;word-wrap:break-word"> <?php echo e($searched_course->name); ?> </h1></a>
+            <h2 style="color:white;word-wrap:break-word"> <?php echo e($searched_course->teacher); ?> </h2>
+            <h2 style="color: white;word-wrap:break-word"> <?php echo e($searched_course->date); ?> </h2>
 
                 <p style="color:white;word-wrap:break-word;" class="text"> <?php echo e($searched_course->text); ?>... </p>
 

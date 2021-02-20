@@ -47,16 +47,15 @@
                             <div class="col-md-5 col-lg-3 col-xl-3">
                                 <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                     <img style="width 300px;height :150px" class="img-fluid w-100"
-                                         src="images/<?php echo e($book->picture); ?>" onerror="this.src='<?php echo e(asset('images/no-image.png')); ?>';">
+                                         src="/images/<?php echo e($book->picture); ?>" onerror="this.src='<?php echo e(asset('images/no-image.png')); ?>';">
                                 </div>
                             </div>
                             <div class="col-md-7 col-lg-9 col-xl-9">
-                                <div class="d-flex justify-content-between">
+                                <div class="pt-2 d-flex justify-content-between">
                                     <div>
-                                        <h3 style="color:white" class=mt-2"><a href="/admin/books/<?php echo e($book->id); ?>/edit"> <?php echo e($book->name); ?></a></h3>
+                                        <h3 style="color:white" class="mt-4 pb-2"><a href="/admin/books/<?php echo e($book->id); ?>/edit"> <?php echo e($book->name); ?></a></h3>
 
-
-                                        <p class="mb-1 text-muted text-uppercase small"><?php echo e($book->price); ?></p>
+                                        <h4><?php echo e($book->price); ?></h4>
                                     </div>
                                 </div>
                             </div>
