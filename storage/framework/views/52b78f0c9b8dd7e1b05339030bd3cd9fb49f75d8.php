@@ -17,7 +17,7 @@
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <a href="/admin/courses/create"> <h5>ایجاد کتاب جدید</h5></a>
+            <a href="/admin/books/create"> <h5>ایجاد کتاب جدید</h5></a>
         </div>
 
         
@@ -40,9 +40,8 @@
 
 
     </div>
-
     <?php
-        $i = 0;
+    $i = 0;
     ?>
     <?php if($book_count % 2 == 0): ?>
         <?php while($i != $book_count): ?>
@@ -50,25 +49,25 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h2 style="color:red"> <?php echo e($book->name); ?> </h2></a>
+                    <a href = "/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
                     <h4> <?php echo e($book->price); ?> </h2>
-                    <h4> <?php echo e($book->date); ?> </h2>
-                    <h4> <?php echo e($book->text); ?> </h2>
-                        <div style="float:left">
-                            <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+
+
+                                <div style="float:left">
+                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
 
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h2 style="color:red"> <?php echo e($book->name); ?> </h2></a>
+                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
                     <h4> <?php echo e($book->price); ?> </h2>
-                    <h4> <?php echo e($book->date); ?> </h2>
-                    <h4> <?php echo e($book->text); ?> </h2>
-                        <div style="float:left">
-                            <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+
+
+                                <div style="float:left">
+                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -82,24 +81,25 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                   <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h2 style="color:red"> <?php echo e($book->name); ?> </h2></a>
+                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
                     <h4> <?php echo e($book->price); ?> </h2>
-                    <h4> <?php echo e($book->date); ?> </h2>
-                    <h4> <?php echo e($book->text); ?> </h2>
-                        <div style="float:left">
-                            <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+
+
+
+                                <div style="float:left">
+                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                        <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h2 style="color:red"> <?php echo e($book->name); ?> </h2></a>
+                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
                     <h4> <?php echo e($book->price); ?> </h2>
-                    <h4> <?php echo e($book->date); ?> </h2>
-                    <h4> <?php echo e($book->text); ?> </h2>
-                        <div style="float:left">
-                            <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+
+
+                                <div style="float:left">
+                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -109,18 +109,15 @@
             <div class="offset-md-1"></div>
             <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                 <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h2 style="color:red"> <?php echo e($book->name); ?> </h2></a>
+                <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
                 <h4> <?php echo e($book->price); ?> </h2>
-                <h4> <?php echo e($book->date); ?> </h2>
-                <h4> <?php echo e($book->text); ?> </h2>
-                    <div style="float:left">
-                        <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                    </div>
+                           <div style="float:left">
+                                <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                            </div>
                 <?php $i += 1 ?>
             </div>
         </div>
     <?php endif; ?>
-
 
 
 <?php $__env->stopSection(); ?>

@@ -49,6 +49,16 @@ h1,h2,h3,h4,h5,h6,p,span {
 .animate:focus {
     width: 100%;
 }
+
+
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
 </style>
 
 
