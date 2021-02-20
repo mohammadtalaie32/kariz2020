@@ -4,11 +4,11 @@
 
 
 
-        <div class="row ">
+            <div>
             <form method = "POST" action="/admin/courses/searched">
                 <?php echo e(csrf_field()); ?>
 
-                <input style="border:none;" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate w-100 mr-3">
+                <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید ..." list="browsers" class="animate">
                 <datalist id="browsers">
                     <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option><?php echo e($course->name); ?></option>
@@ -17,7 +17,7 @@
                 </datalist>
                 <input hidden type="submit" value="جستجو" class="btn btn-primary" >
             </form>
-        </div>
+            </div><br><br><br>
 
         <div class="row mb-3">
             <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">

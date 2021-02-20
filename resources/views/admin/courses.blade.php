@@ -9,7 +9,7 @@
             <div>
             <form method = "POST" action="/admin/courses/searched">
                 {{csrf_field()}}
-                <input style="margin-right:0px" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate">
+                <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید ..." list="browsers" class="animate">
                 <datalist id="browsers">
                     @foreach($courses as $course)
                         <option>{{$course->name}}</option>
