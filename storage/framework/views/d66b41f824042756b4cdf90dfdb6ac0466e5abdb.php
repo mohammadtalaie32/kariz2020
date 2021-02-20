@@ -60,10 +60,10 @@
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 style="color:white" class=mt-2"><?php echo e($course->name); ?></h3>
+                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/<?php echo e($course->id); ?>/edit"><?php echo e($course->name); ?></a></h3>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->teacher); ?></p>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->date); ?></p>
-                                            <p class="mb-1 text-muted text-uppercase small"><?php echo e(\Illuminate\Support\Str::limit($course->text, 100, '...')); ?></div>
+                                            <p class="mb-1 text-muted text-uppercase small"><?php echo e(\Illuminate\Support\Str::limit($course->text, 100, ' ...')); ?></div>
                                     </div>
                                 </div>
                             </div>

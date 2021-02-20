@@ -61,10 +61,10 @@
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 style="color:white" class=mt-2">{{$course->name}}</h3>
+                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/{{$course->id}}/edit">{{$course->name}}</a></h3>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->teacher}}</p>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->date}}</p>
-                                            <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($course->text, 100, '...')}}</div>
+                                            <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($course->text, 100, ' ...')}}</div>
                                     </div>
                                 </div>
                             </div>
