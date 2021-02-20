@@ -9,7 +9,7 @@
             <div>
             <form method = "POST" action="/admin/courses/searched">
                 {{csrf_field()}}
-                <input style="margin-right:0px" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید" list="browsers" class="animate">
+                <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_course" name="browser" placeholder="نام دوره یا مدرس را جست و جو کنید ..." list="browsers" class="animate">
                 <datalist id="browsers">
                     @foreach($courses as $course)
                         <option>{{$course->name}}</option>
@@ -59,11 +59,10 @@
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/{{$course->id}}/edit"> {{$course->name}}</a></h3>
+                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/{{$course->id}}/edit">{{$course->name}}</a></h3>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->teacher}}</p>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->date}}</p>
-                                            <p class="mb-1 text-muted text-uppercase small">{{ substr($course->text, 0,  20) }}</p>
-                                        </div>
+                                            <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($course->text, 100, ' ...')}}</div>
                                     </div>
                                 </div>
                             </div>
