@@ -24,9 +24,7 @@
                 <a href="/admin/courses/create"> <h5>ایجاد دوره جدید</h5></a>
             </div>
 
-            <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-                <h5>دکمه 2</h5>
-            </div>
+
         </div>
 
 
@@ -54,17 +52,17 @@
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                         <img style="width 300px;height :150px" class="img-fluid w-100"
-                                             src="images/<?php echo e($course->picture); ?>" onerror="this.src='<?php echo e(asset('images/no-image.png')); ?>';">
+                                             src="/images/<?php echo e($course->picture); ?>" onerror="this.src='<?php echo e(asset('images/no-image.png')); ?>';">
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/<?php echo e($course->id); ?>/edit"><?php echo e($course->name); ?></a></h3>
+                                            <h3 style="color:white"><a href="/admin/courses/<?php echo e($course->id); ?>/edit"><?php echo e($course->name); ?></a></h3>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->teacher); ?></p>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->date); ?></p>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e(\Illuminate\Support\Str::limit($course->text, 100, ' ...')); ?></div>
-                                    </div>
+                                        </div>
                                 </div>
                             </div>
                             <hr class="mb-4">

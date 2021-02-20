@@ -53,17 +53,17 @@
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                         <img style="width 300px;height :150px" class="img-fluid w-100"
-                                             src="images/{{$course->picture}}" onerror="this.src='{{asset('images/no-image.png')}}';">
+                                             src="/images/{{$course->picture}}" onerror="this.src='{{asset('images/no-image.png')}}';">
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 style="color:white" class=mt-2"><a href="/admin/courses/{{$course->id}}/edit">{{$course->name}}</a></h3>
+                                            <h3 style="color:white"><a href="/admin/courses/{{$course->id}}/edit">{{$course->name}}</a></h3>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->teacher}}</p>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->date}}</p>
                                             <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($course->text, 100, ' ...')}}</div>
-                                    </div>
+                                        </div>
                                 </div>
                             </div>
                             <hr class="mb-4">

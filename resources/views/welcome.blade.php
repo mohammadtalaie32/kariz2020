@@ -107,13 +107,13 @@ Header
 Intro Section
 ============================-->
 
-<div class="jumbotron jumbotron-fluid bg-dark">
+<div class="jumbotron jumbotron-fluid bg-dark mb-0 ">
 
     <div class="jumbotron-background">
-      <img src="{{ asset("img/mii1.jpg") }}" class="blur "صث>
+      <img src="{{ asset("images/back.jpg") }}">
     </div>
 
-    <div class="container text-white" style="margin-top: 9%">
+    <div class="container text-white" style="margin-top: 5%">
 
       <h1 class="display-4">شبکه اموزشی کاریز</h1>
       <p class="lead">مرجع تخصصی آموزش جهت فارسی زبانان کانادا</p>
@@ -123,9 +123,10 @@ Intro Section
     </div>
 </div>
 
+<div class="container-fluid bg-secondary">.</div>
 
 <!-- Carousel wrapper -->
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<div id="carouselBasicExample" data-ride="carousel" class="carousel slide carousel-fade" data-mdb-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
@@ -181,19 +182,19 @@ Intro Section
         class="carousel-control-prev"
         href="#carouselBasicExample"
         role="button"
-        data-mdb-slide="prev"
+        data-slide="prev"
     >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="sr-only">Previous</span>
     </a>
     <a
         class="carousel-control-next"
         href="#carouselBasicExample"
         role="button"
-        data-mdb-slide="next"
+        data-slide="next"
     >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="sr-only">Next</span>
     </a>
 </div>
 <!-- Carousel wrapper -->
@@ -966,13 +967,13 @@ Footer
 <!-- <div id="preloader "></div> -->
 <script src="lib/jquery/jquery.min.js "></script>
 
-<script>
-    $( document ).ready(function() {
+<script language="JavaScript" type="text/javascript">
+    $(document).ready(function(){
         $('.carousel').carousel({
-            interval: 2000;
+            interval: 5000
         })
+        $('.carousel-control.right').trigger('click');
     });
-
 </script>
 <!-- JavaScript Libraries -->
 

@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5,h6,p,span {
 
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                پنل مدیریتی
+                پنل مدیریت
             </a>
         </div>
 

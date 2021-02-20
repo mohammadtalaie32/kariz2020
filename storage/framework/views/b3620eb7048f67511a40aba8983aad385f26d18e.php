@@ -1,125 +1,72 @@
-
-
 <?php $__env->startSection("content"); ?>
 
+    <div>
+        <form method = "POST" action="/admin/books/searched">
+            <?php echo e(csrf_field()); ?>
 
-    <form method = "POST" action="/admin/books/searched">
-        <?php echo e(csrf_field()); ?>
+            <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_book" name="browser" placeholder="نام کتاب جست و جو کنید ..." list="browsers" class="animate">
+            <datalist id="browsers">
+                <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option><?php echo e($book->name); ?></option>
 
-        <input  type="text" name="searched_book" placeholder="نام کتاب را جستجو کنید"   name="browser" list="browsers" class="animate">
-        <datalist id="browsers">
-        <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <option><?php echo e($book->name); ?></option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </datalist>
-        <input hidden type="submit" value="جستجو" class="btn btn-primary">
-    </form>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </datalist>
+            <input hidden type="submit" value="جستجو" class="btn btn-primary" >
+        </form>
+    </div><br><br><br>
 
-<br><br><br>
-    <div class="row container mb-3">
-        <div class="offset-md-1"></div>
-        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+    <div class="row mb-3">
+        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/books/create"> <h5>ایجاد کتاب جدید</h5></a>
         </div>
 
-        
-        
-        
+
     </div>
 
 
-
-
-
-    <div class="row mb-3">
+    <div class="row">
         <div class="offset-md-1"></div>
-        <div class="col-md-10">
-            <h5 class="alert alert-dismissible alert-info">برای ویرایش کتاب ها روی نام کتاب کلیک کنید!</h5>
+        <div class="col-md-12">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش کتاب  ها روی نام کتاب کلیک کنید!</h5>
         </div>
     </div>
 
 
 
+    <!--Section: Block Content-->
+    <!--Grid row-->
+    <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-12">
+            <!-- Card -->
+            <div class="card wish-list mb-3">
+                <div class="card-body pt-3">
 
-    </div>
-    <?php
-    $i = 0;
-    ?>
-    <?php if($book_count % 2 == 0): ?>
-        <?php while($i != $book_count): ?>
-            <div class="row container">
-                <div class="offset-md-1"></div>
-                <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <?php $book = $books[$i] ?>
-                    <a href = "/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
-                    <h4> <?php echo e($book->price); ?> </h2>
-
-
-                                <div style="float:left">
-                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
+                    <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="row mb-4">
+                            <div class="col-md-5 col-lg-3 col-xl-3">
+                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                    <img style="width 300px;height :150px" class="img-fluid w-100"
+                                         src="/images/<?php echo e($book->picture); ?>" onerror="this.src='<?php echo e(asset('images/no-image.png')); ?>';">
                                 </div>
-                    <?php $i += 1 ?>
-                </div>
-
-                <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"> <h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
-                    <h4> <?php echo e($book->price); ?> </h2>
-
-
-                                <div style="float:left">
-                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                                </div>
-                    <?php $i += 1 ?>
-                </div>
-            </div>
-            <BR>
-
-
-        <?php endwhile; ?>
-    <?php else: ?>
-        <?php while($i != $book_count - 1): ?>
-            <div class="row container">
-                <div class="offset-md-1"></div>
-                <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
-                    <h4> <?php echo e($book->price); ?> </h2>
-
-
-
-                                <div style="float:left">
-                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                                </div>
-                    <?php $i += 1 ?>
-                </div>
-                <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
-                    <?php $book = $books[$i] ?>
-                    <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
-                    <h4> <?php echo e($book->price); ?> </h2>
-
-
-                                <div style="float:left">
-                                    <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
-                                </div>
-                    <?php $i += 1 ?>
-                </div>
-            </div>
-            <br>
-        <?php endwhile; ?>
-        <div class="row ">
-            <div class="offset-md-1"></div>
-            <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
-                <?php $book = $books[$i] ?>
-                <a href="/admin/books/<?php echo e($book->id); ?>/edit"><h1 style="color:red"> <?php echo e($book->name); ?> </h1></a>
-                <h4> <?php echo e($book->price); ?> </h2>
-                           <div style="float:left">
-                                <img src="/images/<?php echo e($book->picture); ?>" height="100%" width="100%" alt="NO PHOTO">
                             </div>
-                <?php $i += 1 ?>
+                            <div class="col-md-7 col-lg-9 col-xl-9">
+                                <div class="pt-2 d-flex justify-content-between">
+                                    <div>
+                                        <h3 style="color:white" class="mt-4 pb-2"><a href="/admin/books/<?php echo e($book->id); ?>/edit"> <?php echo e($book->name); ?></a></h3>
+
+                                        <h4><?php echo e($book->price); ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                </div>
+                <!--Grid column-->
             </div>
-        </div>
-    <?php endif; ?>
+            <!--Grid row-->
 
 
 <?php $__env->stopSection(); ?>
