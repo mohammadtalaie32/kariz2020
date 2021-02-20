@@ -18,7 +18,7 @@
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
-            <a href="/admin/courses/create"> <h5>ایجاد کتاب جدید</h5></a>
+            <a href="/admin/books/create"> <h5>ایجاد کتاب جدید</h5></a>
         </div>
 
         {{--        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">--}}
@@ -41,9 +41,8 @@
 
 
     </div>
-
     <?php
-        $i = 0;
+    $i = 0;
     ?>
     @if($book_count % 2 == 0)
         @while ($i != $book_count)
@@ -51,25 +50,25 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                    <a href="/admin/books/{{$book->id}}/edit"><h2 style="color:red"> {{ $book->name }} </h2></a>
-                    <h4> {{ $book->price}} </h2>
-                    <h4> {{ $book->date }} </h2>
-                    <h4> {{ $book->text }} </h2>
-                        <div style="float:left">
-                            <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+                    <a href = "/admin/books/{{$book->id}}/edit"><h1 style="color:red"> {{ $book->name }} </h1></a>
+                    <h4> {{ $book->price }} </h2>
+
+
+                                <div style="float:left">
+                                    <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
 
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                    <a href="/admin/books/{{$book->id}}/edit"> <h2 style="color:red"> {{ $book->name }} </h2></a>
-                    <h4> {{ $book->price}} </h2>
-                    <h4> {{ $book->date }} </h2>
-                    <h4> {{ $book->text }} </h2>
-                        <div style="float:left">
-                            <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+                    <a href="/admin/books/{{$book->id}}/edit"> <h1 style="color:red"> {{ $book->name }} </h1></a>
+                    <h4> {{ $book->price }} </h2>
+
+
+                                <div style="float:left">
+                                    <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -83,24 +82,25 @@
                 <div class="offset-md-1"></div>
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                   <a href="/admin/books/{{$book->id}}/edit"> <h2 style="color:red"> {{ $book->name }} </h2></a>
-                    <h4> {{ $book->price}} </h2>
-                    <h4> {{ $book->date }} </h2>
-                    <h4> {{ $book->text }} </h2>
-                        <div style="float:left">
-                            <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+                    <a href="/admin/books/{{$book->id}}/edit"><h1 style="color:red"> {{ $book->name }} </h1></a>
+                    <h4> {{ $book->price }} </h2>
+
+
+
+                                <div style="float:left">
+                                    <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $book = $books[$i] ?>
-                        <a href="/admin/books/{{$book->id}}/edit"> <h2 style="color:red"> {{ $book->name }} </h2></a>
-                    <h4> {{ $book->price}} </h2>
-                    <h4> {{ $book->date }} </h2>
-                    <h4> {{ $book->text }} </h2>
-                        <div style="float:left">
-                            <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
-                        </div>
+                    <a href="/admin/books/{{$book->id}}/edit"><h1 style="color:red"> {{ $book->name }} </h1></a>
+                    <h4> {{ $book->price }} </h2>
+
+
+                                <div style="float:left">
+                                    <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
+                                </div>
                     <?php $i += 1 ?>
                 </div>
             </div>
@@ -110,18 +110,15 @@
             <div class="offset-md-1"></div>
             <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                 <?php $book = $books[$i] ?>
-                    <a href="/admin/books/{{$book->id}}/edit"> <h2 style="color:red"> {{ $book->name }} </h2></a>
-                <h4> {{ $book->price}} </h2>
-                <h4> {{ $book->date }} </h2>
-                <h4> {{ $book->text }} </h2>
-                    <div style="float:left">
-                        <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
-                    </div>
+                <a href="/admin/books/{{$book->id}}/edit"><h1 style="color:red"> {{ $book->name }} </h1></a>
+                <h4> {{ $book->price }} </h2>
+                           <div style="float:left">
+                                <img src="/images/{{$book->picture}}" height="100%" width="100%" alt="NO PHOTO">
+                            </div>
                 <?php $i += 1 ?>
             </div>
         </div>
     @endif
-
 
 
 @endsection
