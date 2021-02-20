@@ -1,23 +1,48 @@
 @extends('layouts.admin')
 @section('content')
 @if(count($searched_courses) > 0)
-    <div>
-        <h1 style="text-align:center;color:white">برای ویرایش دوره ها روی نام دوره کلیک کنید</h1>
-    </div>
-    <br>
-    @foreach($searched_courses as $searched_course)
-        <div style = "background-color:rebeccapurple;border: 1px solid black;Border-radius:10px;padding:50px;max-width:100%">
-            <img src="/images/{{$searched_course->picture}}" height="10%" width="10%" alt="NO PHOTO" style="float:left">
-            <a href = "/admin/courses/{{$searched_course->id}}/edit"><h1 style="color:red;word-wrap:break-word"> {{ $searched_course->name }} </h1></a>
-            <h2 style="color:white;word-wrap:break-word"> {{ $searched_course->teacher }} </h2>
-            <h2 style="color: white;word-wrap:break-word"> {{ $searched_course->date }} </h2>
-
-                <p style="color:white;word-wrap:break-word;" class="text"> {{ $searched_course->text}}... </p>
-
-
+    <div class="row">
+        <div class="offset-md-1"></div>
+        <div class="col-md-12">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش دوره ها روی نام دوره کلیک کنید!</h5>
+        </div>
     </div>
 
-    @endforeach
+
+    <!--Section: Block Content-->
+    <!--Grid row-->
+    <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-12">
+            <!-- Card -->
+            <div class="card wish-list mb-3">
+                <div class="card-body pt-3">
+
+                    @foreach($searched_courses as $searched_course)
+                        <div class="row mb-4">
+                            <div class="col-md-5 col-lg-3 col-xl-3">
+                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                    <img style="width 300px;height :150px" class="img-fluid w-100"
+                                         src="/images/{{$searched_course->picture}}" onerror="this.src='{{asset('images/no-image.png')}}';">
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-9 col-xl-9">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h3 style="color:white"><a href="/admin/courses/{{$searched_course->id}}/edit">{{$searched_course->name}}</a></h3>
+                                        <p class="mb-1 text-muted text-uppercase small">{{$searched_course->teacher}}</p>
+                                        <p class="mb-1 text-muted text-uppercase small">{{$searched_course->date}}</p>
+                                        <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($searched_course->text, 100, ' ...')}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                    @endforeach
+
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
 @else
     <h2 style="color:white">هیچ دوره ای یا مدرسی با این نام پیدا نشد</h2>
 @endif
