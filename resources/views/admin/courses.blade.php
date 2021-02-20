@@ -64,8 +64,7 @@
                                             <h3 style="color:white" class=mt-2">{{$course->name}}</h3>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->teacher}}</p>
                                             <p class="mb-1 text-muted text-uppercase small">{{$course->date}}</p>
-                                            <p class="mb-1 text-muted text-uppercase small">{{ substr($course->text, 0,  20) }}</p>
-                                        </div>
+                                            <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($course->text, 100, '...')}}</div>
                                     </div>
                                 </div>
                             </div>

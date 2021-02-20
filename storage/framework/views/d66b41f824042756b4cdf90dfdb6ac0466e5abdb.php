@@ -63,8 +63,7 @@
                                             <h3 style="color:white" class=mt-2"><?php echo e($course->name); ?></h3>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->teacher); ?></p>
                                             <p class="mb-1 text-muted text-uppercase small"><?php echo e($course->date); ?></p>
-                                            <p class="mb-1 text-muted text-uppercase small"><?php echo e(substr($course->text, 0,  20)); ?></p>
-                                        </div>
+                                            <p class="mb-1 text-muted text-uppercase small"><?php echo e(\Illuminate\Support\Str::limit($course->text, 100, '...')); ?></div>
                                     </div>
                                 </div>
                             </div>
