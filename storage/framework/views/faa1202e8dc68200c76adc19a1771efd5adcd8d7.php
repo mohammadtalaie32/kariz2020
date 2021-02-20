@@ -4,14 +4,14 @@
     <form method = "POST" action="/admin/feeds/searched">
         <?php echo e(csrf_field()); ?>
 
-        <input  type="text" name="searched_feed" placeholder="عنوان اطلاعیه را جستجو کنید" size="50" style="height:30%;border:1px solid gray;Border-radius:5px" name="browser" list="browsers">
+        <input type="text" name="searched_feed" name="browseer" list="browsers" class="animate" placeholder="نام اطلاعیه را جست و جو کنید">
          <datalist id="browsers">
              <?php $__currentLoopData = $feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
              <option><?php echo e($feed->title); ?></option>
              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
          </datalist>
-        <input type="submit" value="جستجو" class="btn btn-primary">
-    </form>
+        <input hidden type="submit" value="جستجو" class="btn btn-primary">
+    </form><br><br><br>
     <div class="row container mb-3">
         <div class="offset-md-1"></div>
         <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
@@ -20,10 +20,14 @@
 
 
     </div>
-    <br>
-    <div>
-        <h1 style="text-align:center;color:white">برای ویرایش اطلاعیه ها روی عنوان اطلاعیه کلیک کنید</h1>
+
+    <div class="row mb-3">
+        <div class="offset-md-1"></div>
+        <div class="col-md-10">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش اطلاعیه ها روی نام اطلاعیه کلیک کنید!</h5>
+        </div>
     </div>
+
     <?php
         $i = 0;
     ?>
@@ -34,13 +38,8 @@
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
-                        <?php
-                        $string =  $feed->content;
-                        $len = strlen($string);
-                        $string = substr($string,0,(intdiv($len,3)));
 
-                        ?>
-                    <h4 style="word-wrap:break-word"> <?php echo e($string); ?>... </h2>
+                    <h4 style="word-wrap:break-word" class="text"> <?php echo e($feed->content); ?>... </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
                         <div style="float:left">
@@ -58,7 +57,7 @@
                         $string = substr($string,0,(intdiv($len,3)));
 
                         ?>
-                        <h4 style="word-wrap:break-word"> <?php echo e($string); ?>... </h2>
+                        <h4 style="word-wrap:break-word" class="text"> <?php echo e($feed->content); ?>... </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
                         <div style="float:left">
@@ -78,13 +77,8 @@
                 <div class="col-md-5 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
-                        <?php
-                        $string =  $feed->content;
-                        $len = strlen($string);
-                        $string = substr($string,0,(intdiv($len,3)));
 
-                        ?>
-                        <h4 style="word-wrap:break-word"> <?php echo e($string); ?>... </h2>
+                        <h4 style="word-wrap:break-word" class="text"> <?php echo e($feed->content); ?>... </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
                         <div style="float:left">
@@ -95,13 +89,8 @@
                 <div class="col-md-5 mr-4 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                     <?php $feed = $feeds[$i] ?>
                         <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
-                        <?php
-                        $string =  $feed->content;
-                        $len = strlen($string);
-                        $string = substr($string,0,(intdiv($len,3)));
 
-                        ?>
-                        <h4 style="word-wrap:break-word"> <?php echo e($string); ?>... </h2>
+                        <h4 style="word-wrap:break-word" class="text"> <?php echo e($feed->content); ?>... </h2>
                     <h4> <?php echo e($feed->date); ?> </h2>
                     <h4> <?php echo e($feed->text); ?> </h2>
                         <div style="float:left">
@@ -117,13 +106,8 @@
             <div class="col-md-10 p-5 shadow-lg" style="background-color:rebeccapurple;color:white;border-radius: 10px">
                 <?php $feed = $feeds[$i] ?>
                     <a href = "/admin/feeds/<?php echo e($feed->id); ?>/edit"><h1 style="color:red"> <?php echo e($feed->title); ?> </h1></a>
-                    <?php
-                    $string =  $feed->content;
-                    $len = strlen($string);
-                    $string = substr($string,0,(intdiv($len,3)));
 
-                    ?>
-                    <h4 style="word-wrap:break-word"> <?php echo e($string); ?>... </h2>
+                    <h4 style="word-wrap:break-word" class="text"> <?php echo e($feed->content); ?>... </h2>
                 <h4> <?php echo e($feed->date); ?> </h2>
                 <h4> <?php echo e($feed->text); ?> </h2>
                     <div style="float:left">
