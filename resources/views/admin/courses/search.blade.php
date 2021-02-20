@@ -11,13 +11,8 @@
             <a href = "/admin/courses/{{$searched_course->id}}/edit"><h1 style="color:red"> {{ $searched_course->name }} </h1></a>
             <h4 style="color:white"> {{ $searched_course->teacher }} </h2>
             <h4 style="color: white"> {{ $searched_course->date }} </h2>
-                <?php
-                        $string =  $searched_course->text;
-                        $len = strlen($string);
-                        $string = substr($string,0,(intdiv($len,3)));
 
-                ?>
-                <p style="color:white;word-wrap:break-word;"> {{ $string}}... </p>
+                <p style="color:white;word-wrap:break-word;" class="text"> {{ $searched_course->text}}... </p>
 
 
     </div>

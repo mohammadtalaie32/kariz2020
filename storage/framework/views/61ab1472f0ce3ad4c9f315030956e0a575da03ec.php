@@ -29,6 +29,7 @@
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
 
+
     <!-- =======================================================
     Theme Name: NewBiz
     License: https://bootstrapmade.com/license/
@@ -121,25 +122,80 @@ Intro Section
 </div>
 
 
+<!-- Carousel wrapper -->
+<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
+        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
+        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
+    </ol>
 
-
-
-<section  class="clearfix" style="background-color:deepskyblue;">
-    <div class="container" style="background-color:deepskyblue;">
-
-        <div class="intro-img">
-            <img src="img/intro-img.svg" alt="" class="img-fluid">
+    <!-- Inner -->
+    <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <img
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+                class="d-block w-100"
+                alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
         </div>
 
-        <div class="intro-info " style="background-color:deepskyblue;">
-
-
+        <!-- Single item -->
+        <div class="carousel-item">
+            <img
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+                class="d-block w-100"
+                alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
         </div>
 
+        <!-- Single item -->
+        <div class="carousel-item">
+            <img
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+                class="d-block w-100"
+                alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+        </div>
     </div>
+    <!-- Inner -->
 
-</section>
-<!-- #intro -->
+    <!-- Controls -->
+    <a
+        class="carousel-control-prev"
+        href="#carouselBasicExample"
+        role="button"
+        data-mdb-slide="prev"
+    >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a
+        class="carousel-control-next"
+        href="#carouselBasicExample"
+        role="button"
+        data-mdb-slide="next"
+    >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+<!-- Carousel wrapper -->
+
 
 <main id="main">
 
@@ -906,9 +962,19 @@ Footer
 <a href="# " class="back-to-top " ><i class="fa fa-chevron-up "></i></a>
 <!-- Uncomment below i you want to use a preloader -->
 <!-- <div id="preloader "></div> -->
-
-<!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js "></script>
+
+<script>
+    $( document ).ready(function() {
+        $('.carousel').carousel({
+            interval: 2000;
+        })
+    });
+
+</script>
+<!-- JavaScript Libraries -->
+
+
 <script src="lib/jquery/jquery-migrate.min.js "></script>
 <script src="lib/bootstrap/js/bootstrap.bundle.min.js "></script>
 <script src="lib/easing/easing.min.js "></script>

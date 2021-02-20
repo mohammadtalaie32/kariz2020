@@ -1,28 +1,32 @@
 <?php $__env->startSection("content"); ?>
-    <form method = "POST" action="/admin/feeds/searched">
-        <?php echo e(csrf_field()); ?>
+    <div>
+        <form method = "POST" action="/admin/feeds/searched">
+            <?php echo e(csrf_field()); ?>
 
-        <input type="text" name="searched_feed" name="browseer" list="browsers" class="animate" placeholder="نام اطلاعیه را جست و جو کنید">
-         <datalist id="browsers">
-             <?php $__currentLoopData = $feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-             <option><?php echo e($feed->title); ?></option>
-             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-         </datalist>
-        <input hidden type="submit" value="جستجو" class="btn btn-primary">
-    </form><br><br><br>
-    <div class="row container mb-3">
-        <div class="offset-md-1"></div>
-        <div class="col-md-2 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
+            <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_feed" name="browser" placeholder="نام اطلاعیه را جست و جو کنید ..." list="browsers" class="animate">
+            <datalist id="browsers">
+                <?php $__currentLoopData = $feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option><?php echo e($feed->title); ?></option>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </datalist>
+            <input hidden type="submit" value="جستجو" class="btn btn-primary" >
+        </form>
+    </div><br><br><br>
+
+    <div class="row mb-3">
+        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/feeds/create"> <h5>ایجاد اطلاعیه جدید</h5></a>
         </div>
 
 
     </div>
 
-    <div class="row mb-3">
+
+    <div class="row">
         <div class="offset-md-1"></div>
-        <div class="col-md-10">
-            <h5 class="alert alert-dismissible alert-info">برای ویرایش اطلاعیه ها روی نام اطلاعیه کلیک کنید!</h5>
+        <div class="col-md-12">
+            <h5 class="alert alert-dismissible alert-info">برای ویرایش اطلاعیه ها ها روی نام اطلاعیه کلیک کنید!</h5>
         </div>
     </div>
 
