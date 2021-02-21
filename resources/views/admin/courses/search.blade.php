@@ -28,11 +28,11 @@
                             </div>
                             <div class="col-md-7 col-lg-9 col-xl-9">
                                 <div class="d-flex justify-content-between">
-                                    <div>
+                                    <div style="word-wrap:break-word;overflow:hidden">
                                         <h3 style="color:white"><a href="/admin/courses/{{$searched_course->id}}/edit">{{$searched_course->name}}</a></h3>
                                         <p class="mb-1 text-muted text-uppercase small">{{$searched_course->teacher}}</p>
                                         <p class="mb-1 text-muted text-uppercase small">{{$searched_course->date}}</p>
-                                        <p class="mb-1 text-muted text-uppercase small">{{ \Illuminate\Support\Str::limit($searched_course->text, 100, ' ...')}}</div>
+                                        <p class="mb-1 text-muted text-uppercase small text">{{ $searched_course->text}}</div>
                                 </div>
                             </div>
                         </div>
