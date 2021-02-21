@@ -1,7 +1,8 @@
 <?php $__env->startSection("content"); ?>
 
+
     <div class="row mb-3">
-        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:dodgerblue;color:white;border-radius: 10px">
+        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/add_users/create"> <h5>ایجاد کاربر جدید</h5></a>
         </div>
 
@@ -36,7 +37,7 @@
             </thead>
             <tbody>
            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-               <tr id="row_content" onclick="window.location.replace('/admin/add_users/<?php echo e($user->id); ?>/edit');">
+               <tr id="row_content" onclick="window.location.href = ('/admin/add_users/<?php echo e($user->id); ?>/edit');">
                    <td><?php echo e(($user->Role)[0]["role_name"]); ?></td>
                    <td><?php echo e($user->email); ?></td>
                    <td><a href="/admin/add_users/<?php echo e($user->id); ?>/edit" style="color:#8b92a9"> <?php echo e($user->name); ?></a></td>

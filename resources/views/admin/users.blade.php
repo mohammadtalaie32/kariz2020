@@ -2,8 +2,9 @@
 
 @section("content")
 
+
     <div class="row mb-3">
-        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:dodgerblue;color:white;border-radius: 10px">
+        <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
             <a href="/admin/add_users/create"> <h5>ایجاد کاربر جدید</h5></a>
         </div>
 
@@ -38,7 +39,7 @@
             </thead>
             <tbody>
            @foreach($users as $user)
-               <tr id="row_content" onclick="window.location.replace('/admin/add_users/{{$user->id}}/edit');">
+               <tr id="row_content" onclick="window.location.href = ('/admin/add_users/{{$user->id}}/edit');">
                    <td>{{($user->Role)[0]["role_name"]}}</td>
                    <td>{{$user->email}}</td>
                    <td><a href="/admin/add_users/{{$user->id}}/edit" style="color:#8b92a9"> {{$user->name}}</a></td>

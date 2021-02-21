@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminUserEditRequest;
 use App\Http\Requests\AdminUserRequest;
 use App\Models\User;
 use App\Models\UserRolePivot;
@@ -60,26 +61,11 @@ class AdminUserController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
+        $user = User::find($id);
+        return view("admin.add_users.edit",compact('user'));
     }
 
     /**
@@ -89,9 +75,23 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminUserEditRequest $request, $id)
     {
         //
+        $input = $request->all();
+        $user = User::find($id);
+        $user->update(["name" => $input["name"] , "email" => $input["email"]]);
+        $row = UserRolePivot::where("user_id" , "=" , $id);
+        if(strtolower($input["roles"]) == "admin"){
+            $row->update(["role_id" => 1]);
+        }
+        elseif(strtolower($input["roles"]) == "teacher"){
+            $row->update(["role_id" => 2]);
+        }
+        elseif(strtolower($input["roles"]) == "student"){
+            $row->update(["role_id" => 3]);
+        }
+        return redirect("/admin/add_users");
     }
 
     /**
