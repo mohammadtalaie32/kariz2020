@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminBookController;
 use App\Http\Controllers\AdminFeedController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Middleware\IsAdminMiddleware;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,14 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
     Route::any('/admin/feeds/update/{id}',[AdminFeedController::class,'update']);
     Route::any('/admin/feeds/delete/{id}',[AdminFeedController::class,'destroy']);
     Route::any('/admin/feeds/searched',[AdminFeedController::class,'search']);
+    Route::any("/admin/add_users",[AdminUserController::class , "index"]);
+    Route::any("/admin/add_users/create",[AdminUserController::class , "create"]);
+    Route::any("/admin/add_users/store",[AdminUserController::class , "store"]);
+    Route::any("/admin/add_users/{id}/edit");
+    Route::any("/admin/add_users/update/{id}");
+    Route::any("/admin/add_users/delete/{id}");
+    Route::any("/admin/add_users/searched");
+
 });
 // End Of Admin Routes
 

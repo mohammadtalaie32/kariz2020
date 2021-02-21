@@ -6,12 +6,12 @@
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>
-        <input type="text" size="50" name="title" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%">
+        <input type="text" size="50" name="title" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" required>
         <br>
         <br>
         <label for="content" style="font-size:200% ">توضیحات اطلاعیه : </label>
         <br>
-        <textarea type="text" rows="10"  name="content" style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%"></textarea>
+        <textarea type="text" rows="10"  name="content" style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%" required></textarea>
         <br>
         <br>
 

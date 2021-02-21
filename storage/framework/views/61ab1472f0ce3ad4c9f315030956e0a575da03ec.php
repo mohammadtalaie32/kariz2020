@@ -124,7 +124,7 @@ Intro Section
 <div class="container-fluid bg-secondary">.</div>
 
 <!-- Carousel wrapper -->
-<div id="carouselBasicExample" data-ride="carousel" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<div id="carouselBasicExample" data-ride="carousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>

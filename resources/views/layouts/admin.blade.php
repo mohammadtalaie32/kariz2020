@@ -59,6 +59,22 @@ h1,h2,h3,h4,h5,h6,p,span {
     -webkit-box-orient: vertical;
 }
 
+#table_content{
+    text-align:center;
+    padding-left:2%;
+
+
+}
+
+#row_content:hover{
+    background-color:orange;
+}
+
+#head_content:hover{
+    background-color:orange;
+
+}
+
 </style>
 
 
@@ -105,9 +121,9 @@ h1,h2,h3,h4,h5,h6,p,span {
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
+                    <a class="nav-link" href="/admin/add_users">
                         <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
+                        <p>مدیریت کاربرها</p>
                     </a>
                 </li>
                 <li class="nav-item ">

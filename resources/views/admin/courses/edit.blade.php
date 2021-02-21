@@ -7,22 +7,22 @@
 
         <label for="name" style="font-size:200%">نام دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$course->name}}">
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$course->name}}" required>
         <br>
         <br>
         <label for="teacher" style="font-size:200%">نام مدرس دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="teacher" value="{{$course->teacher}}">
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="teacher" value="{{$course->teacher}}" required>
         <br>
         <br>
         <label for = "date" style="font-size:200%">تاریخ دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="date" value="{{$course->date}}">
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="date" value="{{$course->date}}" required>
         <br>
         <br>
         <label for = "text" style="font-size:200%">توضیحات دوره :</label>
         <br>
-        <textarea rows="10"  style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%" name="text">{{$course->text}}</textarea>
+        <textarea rows="10"  style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%" name="text" required>{{$course->text}}</textarea>
         <br>
         <br>
         <label for="picture" style="font-size:200%">عکس دوره : </label>

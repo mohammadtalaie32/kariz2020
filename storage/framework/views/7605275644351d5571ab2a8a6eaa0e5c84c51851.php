@@ -7,12 +7,12 @@
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="title" value="<?php echo e($feed->title); ?>" >
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="title" value="<?php echo e($feed->title); ?>" required>
         <br>
         <br>
         <label for = "content" style="font-size:200%">توضیحات اطلاعیه :</label>
         <br>
-        <textarea rows="10" style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%" name="content"><?php echo e($feed->content); ?></textarea>
+        <textarea rows="10" style="font-size:150%;border:2px solid gray;Border-radius:10px;width:100%" name="content" required><?php echo e($feed->content); ?></textarea>
         <br>
         <br>
         <label for="picture" style="font-size:200%">عکس اطلاعیه : </label>
