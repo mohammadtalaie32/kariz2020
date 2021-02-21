@@ -50,11 +50,11 @@
                             </div>
                             <div class="col-md-7 col-lg-9 col-xl-9">
                                 <div class="d-flex justify-content-between">
-                                    <div>
+                                    <div style="word-wrap:break-word;overflow:hidden">
                                         <h3 style="color:white" class=mt-2"><a href="/admin/feeds/{{$feed->id}}/edit"> {{$feed->title}}</a></h3>
 
 
-                                        <p class="mb-1 text-muted text-uppercase small">{{ substr($feed->content, 0,  20) }}</p>
+                                        <p class="mb-1 text-muted text-uppercase small text">{{$feed->content}}</p>
                                     </div>
                                 </div>
                             </div>

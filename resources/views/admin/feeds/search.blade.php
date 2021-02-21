@@ -27,11 +27,11 @@
                                 </div>
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="d-flex justify-content-between">
-                                        <div>
+                                        <div style="word-wrap:break-word;overflow:hidden">
                                             <h3 style="color:white" class=mt-2"><a href="/admin/feeds/{{$searched_feed->id}}/edit"> {{$searched_feed->title}}</a></h3>
 
 
-                                            <p class="mb-1 text-muted text-uppercase small text">{{ substr($searched_feed->content, 0,  20) }}</p>
+                                            <p class="mb-1 text-muted text-uppercase small text">{{ $searched_feed->content}}</p>
                                         </div>
                                     </div>
                                 </div>

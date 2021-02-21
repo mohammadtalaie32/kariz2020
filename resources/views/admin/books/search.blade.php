@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-md-7 col-lg-9 col-xl-9">
                                     <div class="pt-2 d-flex justify-content-between">
-                                        <div>
+                                        <div style="word-wrap:break-word;overflow:hidden">
                                             <h3 style="color:white" class="mt-4 pb-2"><a href="/admin/books/{{$searched_book->id}}/edit"> {{$searched_book->name}}</a></h3>
 
                                             <h4>{{$searched_book->price}}</h4>
