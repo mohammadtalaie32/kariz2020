@@ -18,6 +18,8 @@
 
 
 
+
+
 <?php
     $count = 1;
 ?>
@@ -34,7 +36,7 @@
             </thead>
             <tbody>
            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-               <tr id="row_content">
+               <tr id="row_content" onclick="window.location.replace('/admin/add_users/<?php echo e($user->id); ?>/edit');">
                    <td><?php echo e(($user->Role)[0]["role_name"]); ?></td>
                    <td><?php echo e($user->email); ?></td>
                    <td><a href="/admin/add_users/<?php echo e($user->id); ?>/edit" style="color:#8b92a9"> <?php echo e($user->name); ?></a></td>
