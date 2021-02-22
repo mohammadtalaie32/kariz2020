@@ -69,6 +69,7 @@ h1,h2,h3,h4,h5,h6,p,span {
 #row_content:hover{
     background-color:orange;
     cursor:pointer;
+
 }
 
 #head_content:hover{

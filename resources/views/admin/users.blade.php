@@ -28,7 +28,7 @@
 ?>
     <div class="container">
 
-        <table class="table table-hover table-striped table-info" id="table_content">
+        <table class="table table-hover table-striped table-dark" id="table_content">
             <thead>
             <tr id="head_content">
                 <th>Role</th>
@@ -40,10 +40,10 @@
             <tbody>
            @foreach($users as $user)
                <tr id="row_content" onclick="window.location.href = ('/admin/add_users/{{$user->id}}/edit');">
-                   <td>{{($user->Role)[0]["role_name"]}}</td>
-                   <td>{{$user->email}}</td>
-                   <td><a href="/admin/add_users/{{$user->id}}/edit" style="color:#8b92a9"> {{$user->name}}</a></td>
-                   <td>{{$count++}}</td>
+                   <td style="color:white">{{($user->Role)[0]["role_name"]}}</td>
+                   <td style="color:white">{{$user->email}}</td>
+                   <td style="color:white"> {{$user->name}}</td>
+                   <td style="color:white">{{$count++}}</td>
                </tr>
 
            @endforeach
