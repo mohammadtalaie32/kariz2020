@@ -27,7 +27,9 @@
                 </tbody>
             </table>
         </div>
-<?php endif; ?>
+    <?php else: ?>
+        <h2 style="color:white">هیچ کاربری با این نام پیدا نشد</h2>
+    <?php endif; ?>
 
 
 <?php $__env->stopSection(); ?>

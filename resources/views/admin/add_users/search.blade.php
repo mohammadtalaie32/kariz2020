@@ -28,7 +28,9 @@
                 </tbody>
             </table>
         </div>
-@endif
+    @else
+        <h2 style="color:white">هیچ کاربری با این نام پیدا نشد</h2>
+    @endif
 
 
 @endsection
