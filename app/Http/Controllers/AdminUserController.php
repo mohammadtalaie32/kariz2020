@@ -103,5 +103,41 @@ class AdminUserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+        $role = UserRolePivot::where("user_id" , "=" , $id)->delete();
+        return redirect("/admin/add_users");
     }
+
+    public function keyword($string1,$string2){
+        similar_text($string1,$string2,$percent);
+        if($percent >= 80){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function search(Request $request){
+        $request->validate(['searched_user'=>'required']);
+        $input = $request->all();
+        $users = User::all();
+        $searched_users = [];
+        $i = 0;
+        if($input['searched_user'] != null) {
+            foreach ($users as $user) {
+                if (str_contains($user['name'], $input['searched_user']) or   (str_contains($input['searched_user'],$user['name'])) or $this->keyword($input['searched_user'],$user['name'])) {
+                    $searched_users[$i] = $user;
+                    $i += 1;
+                }
+            }
+            return view('admin.add_users.search',compact('searched_users'));
+        }
+
+        else {
+            return view('admin.add_users.search', compact('searched_users'));
+        }
+    }
+
 }

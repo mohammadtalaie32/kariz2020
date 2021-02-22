@@ -47,6 +47,11 @@
 
 
         </form>
+        
+        <form method="DELETE" action="/admin/add_users/delete/{{$user->id}}">
+            {{csrf_field()}}
+            <input type="submit" value="حذف کردن کاربر " class="btn btn-info" style="font-size:200%;float:right">
+        </form>
 
     </fieldset>
 

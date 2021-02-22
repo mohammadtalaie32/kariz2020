@@ -51,8 +51,8 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
     Route::any("/admin/add_users/store",[AdminUserController::class , "store"]);
     Route::any("/admin/add_users/{id}/edit",[AdminUserController::class , "edit"]);
     Route::any("/admin/add_users/update/{id}" , [AdminUserController::class , "update"]);
-    Route::any("/admin/add_users/delete/{id}");
-    Route::any("/admin/add_users/searched");
+    Route::any("/admin/add_users/delete/{id}" , [AdminUserController::class , "destroy"]);
+    Route::any("/admin/add_users/searched",[AdminUserController::class , "search"]);
 
 });
 // End Of Admin Routes

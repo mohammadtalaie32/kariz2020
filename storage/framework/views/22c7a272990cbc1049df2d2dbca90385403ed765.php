@@ -1,5 +1,18 @@
 <?php $__env->startSection("content"); ?>
+    <div>
+        <form method = "POST" action="/admin/add_users/searched">
+            <?php echo e(csrf_field()); ?>
 
+            <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_user" name="browser" placeholder="نام کاربر جست و جو کنید ..." list="browsers" class="animate">
+            <datalist id="browsers">
+                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option><?php echo e($user->name); ?></option>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </datalist>
+            <input hidden type="submit" value="جستجو" class="btn btn-primary" >
+        </form>
+    </div><br><br><br>
 
     <div class="row mb-3">
         <div class="col-md-2 mr-3 pt-3 pb-1" style="text-align:center;background-color:rebeccapurple;color:white;border-radius: 10px">
