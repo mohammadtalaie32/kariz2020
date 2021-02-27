@@ -167,15 +167,6 @@ Intro Section
                         <button class="btn btn-primary rightLst">></button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <br/><br/><br/>
-                        <hr/>
-                        <p>Settings</p>
-                        <p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
-                        <p>Change data slide for slides per click Ex:data-slide="1"</p>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -195,56 +186,18 @@ Intro Section
 
             <div class="row">
 
-                <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
-                    </div>
-                </div>
+                @foreach($courses as $course)
+                    <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon"><i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i></div>
+                            <h4 class="title"><a href="">{{$course->name}}</a></h4>
+                            <img class="card-img-top mt-1" src="images/{{ $course->picture }}" width="276px" height="200px" alt="Card image cap">
+                            <p class="mt-3 description" style="direction: rtl">{!! \Illuminate\Support\Str::limit($course->text, 150, $end='...') !!}</p>
+                            <a href="#" class="btn btn-primary mt-3 w-100">اطلاعات بیشتر</a>
 
-                <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-world-outline" style="color: #d6ff22;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon"><i class="ion-ios-clock-outline" style="color: #4680ff;"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم یک متن ساختگی نا مفهوم است</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-                            ابزارهای کاربردی می باشد. </p>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
 
