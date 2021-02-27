@@ -44,4 +44,11 @@ class User extends Authenticatable
     public function Role(){
         return $this->belongsToMany('App\Models\Role','user_role_pivots','user_id','role_id');
     }
+
+    public function isAdmin() {
+        if($this->Role->first()->role_name == 'admin') {
+            return 1;
+        }
+        return 0;
+    }
 }
