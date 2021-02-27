@@ -30,13 +30,13 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        $link = ($user->Role)[0]["role_name"];
+
         if ( $user->isAdmin() ) {// do your magic here
 
-            return redirect($link);
+            return redirect("admin");
         }
 
-        return redirect($link);
+        return redirect("/");
     }
 
     /**
