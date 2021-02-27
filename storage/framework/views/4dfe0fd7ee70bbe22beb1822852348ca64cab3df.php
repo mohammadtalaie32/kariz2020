@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6,p,span {
 }
 
 .animate:focus {
-    width: 100%;
+    width: 80%;
 }
 
 
@@ -57,6 +57,80 @@ h1,h2,h3,h4,h5,h6,p,span {
     display: -webkit-box;
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
+}
+
+#table_content{
+    text-align:center;
+    padding-left:2%;
+
+
+}
+
+#row_content:hover{
+    background-color:orange;
+    cursor:pointer;
+
+}
+
+#head_content:hover{
+    background-color:orange;
+
+}
+
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background:white;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+    background: white;
+    color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 20px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media  screen and (max-width: 620px) {
+    .searchBox:hover > .searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
 }
 
 </style>
@@ -105,9 +179,9 @@ h1,h2,h3,h4,h5,h6,p,span {
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
+                    <a class="nav-link" href="/admin/add_users">
                         <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
+                        <p>مدیریت کاربرها</p>
                     </a>
                 </li>
                 <li class="nav-item ">

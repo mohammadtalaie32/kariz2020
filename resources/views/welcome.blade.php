@@ -67,8 +67,17 @@
     -webkit-filter: blur(4px);
     filter: blur(4px);
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
-
     }
+
+    .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+    .MultiCarousel .MultiCarousel-inner .item { float: left;}
+    .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+    .MultiCarousel .leftLst { left:0; }
+    .MultiCarousel .rightLst { right:0; }
+
+    .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
 </style>
 
 <body>
@@ -123,81 +132,6 @@ Intro Section
     </div>
 </div>
 
-<div class="container-fluid bg-secondary">.</div>
-
-<!-- Carousel wrapper -->
-<div id="carouselBasicExample" data-ride="carousel" class="carousel slide">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
-    </ol>
-
-    <!-- Inner -->
-    <div class="carousel-inner">
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <img
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-        </div>
-
-        <!-- Single item -->
-        <div class="carousel-item">
-            <img
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-
-        <!-- Single item -->
-        <div class="carousel-item">
-            <img
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Inner -->
-
-    <!-- Controls -->
-    <a
-        class="carousel-control-prev"
-        href="#carouselBasicExample"
-        role="button"
-        data-slide="prev"
-    >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a
-        class="carousel-control-next"
-        href="#carouselBasicExample"
-        role="button"
-        data-slide="next"
-    >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-<!-- Carousel wrapper -->
 
 
 <main id="main">
@@ -209,72 +143,38 @@ Intro Section
         <div class="container">
 
             <header class="section-header">
-                <h3>درباره ما</h3>
+                <h3>اطلاعیه ها</h3>
                 <p>ما یک شرکتی هستیم در حوزه ی بیزینس که سالهاست در کشور های مختلف فعالیت داریم و تجربه ی عالی هم در این حوزه کسب کرده ایم و مشتاقیم تا آنها را برای تو بیاموزیم</p>
             </header>
             <br>
-            <div class="row about-container">
-
-                <div class="align-content-center col-lg-6 content order-lg-1 order-2">
-
-
-                    <div class="icon-box wow fadeInUp">
-                        <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم1</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            <div class="container">
+                <div class="row">
+                    <div class="MultiCarousel" data-items="1,1,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                        <div class="MultiCarousel-inner">
+                            @foreach($feeds as $feed)
+                                <div class="item">
+                                    <div class="pad15">
+                                        <p class="lead">Multi Item Carousel</p>
+                                        <p>₹ 1</p>
+                                        <p>₹ 6000</p>
+                                        <p>50% off</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="btn btn-primary leftLst"><</button>
+                        <button class="btn btn-primary rightLst">></button>
                     </div>
-
-                    <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="icon"><i class="fa fa-photo"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم 2</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br/><br/><br/>
+                        <hr/>
+                        <p>Settings</p>
+                        <p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
+                        <p>Change data slide for slides per click Ex:data-slide="1"</p>
                     </div>
-
-                    <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
-                        <h4 class="title"><a href="">لورم ایپسوم 3</a></h4>
-                        <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                    </div>
-
                 </div>
-
-                <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-                    <img src="img/about-img.svg" class="img-fluid" alt="عکس تبلیغات">
-                </div>
-            </div>
-
-            <div class="row about-extra">
-                <div class="col-lg-6 wow fadeInUp">
-                    <img src="img/about-extra-1.svg" class="img-fluid" alt="عکس تبلیغات">
-                </div>
-                <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0 text-justify text-right">
-                    <h4>ارتباط مستقیم با مشتریان</h4>
-                    <p class=" text-justify ">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                        کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد و در کنار آنها
-                        مشغول شد
-                    </p>
-
-                </div>
-            </div>
-            <br>
-            <div class="row about-extra">
-                <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-                    <img src="img/about-extra-2.svg" class="img-fluid" alt="عکس تبلیغات">
-                </div>
-                <br>
-
-                <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1 text-justify text-right">
-                    <h4>ارتباط غیرمستقیم در فضای مجازی با مشتریان</h4>
-                    <p class=" text-justify text-centert">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                        کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد و در کنار آنها
-                        مشغول شد
-
-                    </p>
-
-                </div>
-
             </div>
 
         </div>
@@ -993,6 +893,115 @@ Footer
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js "></script>
+
+<script>
+    $(document).ready(function () {
+        var itemsMainDiv = ('.MultiCarousel');
+        var itemsDiv = ('.MultiCarousel-inner');
+        var itemWidth = "";
+
+        $('.leftLst, .rightLst').click(function () {
+            var condition = $(this).hasClass("leftLst");
+            if (condition)
+                click(0, this);
+            else
+                click(1, this)
+        });
+
+        ResCarouselSize();
+
+
+
+
+        $(window).resize(function () {
+            ResCarouselSize();
+        });
+
+        //this function define the size of the items
+        function ResCarouselSize() {
+            var incno = 0;
+            var dataItems = ("data-items");
+            var itemClass = ('.item');
+            var id = 0;
+            var btnParentSb = '';
+            var itemsSplit = '';
+            var sampwidth = $(itemsMainDiv).width();
+            var bodyWidth = $('body').width();
+            $(itemsDiv).each(function () {
+                id = id + 1;
+                var itemNumbers = $(this).find(itemClass).length;
+                btnParentSb = $(this).parent().attr(dataItems);
+                itemsSplit = btnParentSb.split(',');
+                $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+                if (bodyWidth >= 1200) {
+                    incno = itemsSplit[3];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 992) {
+                    incno = itemsSplit[2];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 768) {
+                    incno = itemsSplit[1];
+                    itemWidth = sampwidth / incno;
+                }
+                else {
+                    incno = itemsSplit[0];
+                    itemWidth = sampwidth / incno;
+                }
+                $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                $(this).find(itemClass).each(function () {
+                    $(this).outerWidth(itemWidth);
+                });
+
+                $(".leftLst").addClass("over");
+                $(".rightLst").removeClass("over");
+
+            });
+        }
+
+
+        //this function used to move the items
+        function ResCarousel(e, el, s) {
+            var leftBtn = ('.leftLst');
+            var rightBtn = ('.rightLst');
+            var translateXval = '';
+            var divStyle = $(el + ' ' + itemsDiv).css('transform');
+            var values = divStyle.match(/-?[\d\.]+/g);
+            var xds = Math.abs(values[4]);
+            if (e == 0) {
+                translateXval = parseInt(xds) - parseInt(itemWidth * s);
+                $(el + ' ' + rightBtn).removeClass("over");
+
+                if (translateXval <= itemWidth / 2) {
+                    translateXval = 0;
+                    $(el + ' ' + leftBtn).addClass("over");
+                }
+            }
+            else if (e == 1) {
+                var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+                translateXval = parseInt(xds) + parseInt(itemWidth * s);
+                $(el + ' ' + leftBtn).removeClass("over");
+
+                if (translateXval >= itemsCondition - itemWidth / 2) {
+                    translateXval = itemsCondition;
+                    $(el + ' ' + rightBtn).addClass("over");
+                }
+            }
+            $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+        }
+
+        //It is used to get some elements from btn
+        function click(ell, ee) {
+            var Parent = "#" + $(ee).parent().attr("id");
+            var slide = $(Parent).attr("data-slide");
+            ResCarousel(ell, Parent, slide);
+        }
+
+    });
+</script>
 
 </body>
 
