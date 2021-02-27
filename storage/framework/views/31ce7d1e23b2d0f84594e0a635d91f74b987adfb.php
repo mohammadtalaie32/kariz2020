@@ -144,18 +144,17 @@ Intro Section
                 <h3>اطلاعیه ها</h3>
                 <p>ما یک شرکتی هستیم در حوزه ی بیزینس که سالهاست در کشور های مختلف فعالیت داریم و تجربه ی عالی هم در این حوزه کسب کرده ایم و مشتاقیم تا آنها را برای تو بیاموزیم</p>
             </header>
-            <br>
             <div class="container">
                 <div class="row">
                     <div class="MultiCarousel" data-items="1,1,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
                         <div class="MultiCarousel-inner">
                             <?php $__currentLoopData = $feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="item">
-                                    <div class="card">
+                                    <div class="card bg-light">
                                         <img class="card-img-top" src="images/<?php echo e($feed->picture); ?>" width="276px" height="200px" alt="Card image cap">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            <h5 class="card-title" style="font-size: 18px;font-weight: bolder"><?php echo e($feed->title); ?></h5>
+                                            <a href="#" class="btn btn-primary">اطلاعات بیشتر</a>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +177,7 @@ Intro Section
         <div class="container">
 
             <header class="section-header">
-                <h3>سرویس ها</h3>
+                <h3> کارگاه های  آموزشی</h3>
                 <p>ما در این سایت بهترین سرویس ها برای بیزینس را معرفی خواهیم کرد تا شما را تبدیل به یک بیزینس من حرفه ای کنیم</p>
             </header>
 
@@ -203,313 +202,7 @@ Intro Section
     </section>
     <!-- #services -->
 
-    <!--==========================
-  Why Us Section
-============================-->
-    <section id="why-us" class="wow fadeIn" style="background-color:lightgray;">
-        <div class="container" >
-            <header class="section-header" >
-                <h3>بیزینس من ها چه کسانی هستند ؟</h3>
-                <p>بیزینس من ها یکی از نو ظهور ترین پدیده ها در صنعت دیجیتالینگ میباشند که اقتصاد دنیا را میچرخانند . حالا تو هم آماده هستی که به دنیای بیزینس وارد شوی؟</p>
-            </header>
 
-            <div class="row row-eq-height justify-content-center">
-
-                <div class="col-lg-4 mb-4">
-                    <div class="card wow bounceInUp">
-                        <i class="fa fa-diamond"></i>
-                        <div class="card-body" >
-                            <h5 class="card-title">لورم ایپسوم یک متن ساختگی </h5>
-                            <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                            <a href="#" class="readmore">بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="card wow bounceInUp" >
-                        <i class="fa fa-language" s></i>
-                        <div class="card-body" >
-                            <h5 class="card-title">لورم ایپسوم یک متن ساختگی </h5>
-                            <p class="card-text" >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                            <a href="#" class="readmore"> بیشتر </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="card wow bounceInUp">
-                        <i class="fa fa-object-group"></i>
-                        <div class="card-body">
-                            <h5 class="card-title">لورم ایپسوم یک متن ساختگی </h5>
-                            <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                            <a href="#" class="readmore"> بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row counters">
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">274</span>
-                    <p>آموزش ها</p>
-                </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">421</span>
-                    <p> پروژه ها</p>
-                </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">1,364</span>
-                    <p> دانشجویان</p>
-                </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">18</span>
-                    <p>مدرسین</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!--==========================
-  Portfolio Section
-============================-->
-    <section id="portfolio" class="clearfix">
-        <div class="container">
-
-            <header class="section-header">
-                <h3 class="section-title">پروژه ها</h3>
-            </header>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">همه</li>
-                        <li data-filter=".filter-app">اپ</li>
-                        <li data-filter=".filter-card">کارت ها</li>
-                        <li data-filter=".filter-web">وبسایت ها</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row portfolio-container">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/app1.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">اپ 1</a></h4>
-                            <p>اپ</p>
-                            <div>
-                                <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/web3.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">وبسایت 3</a></h4>
-                            <p>وبسایت</p>
-                            <div>
-                                <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/app2.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">اپ 2</a></h4>
-                            <p>اپ</p>
-                            <div>
-                                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/card2.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">کارت 2</a></h4>
-                            <p>کارت</p>
-                            <div>
-                                <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/web2.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">وبسایت 2</a></h4>
-                            <p>وبسایت</p>
-                            <div>
-                                <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/app3.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">اپ 3</a></h4>
-                            <p>اپ</p>
-                            <div>
-                                <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/card1.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">کارت 1</a></h4>
-                            <p>کارت</p>
-                            <div>
-                                <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/card3.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">کارت 3</a></h4>
-                            <p>کارت</p>
-                            <div>
-                                <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
-                        <img src="img/portfolio/web1.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="portfolio-info">
-                            <h4><a href="#">وبسایت 1</a></h4>
-                            <p>وبسایت</p>
-                            <div>
-                                <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i
-                                        class="ion ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- #portfolio -->
-
-    <!--==========================
-  Clients Section
-============================-->
-    <section id="testimonials" class="section-bg">
-        <div class="container">
-
-            <header class="section-header">
-                <h3>نظرات کاربران</h3>
-            </header>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-
-                    <div class="owl-carousel testimonials-carousel wow fadeInUp">
-
-                        <div class="testimonial-item">
-                            <img src="img/testimonial-1.jpg" class="testimonial-img" alt="عکس تبلیغات">
-                            <h3>علی </h3>
-                            <h4>طراح و برنامه ویسی</h4>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <img src="img/testimonial-2.jpg" class="testimonial-img" alt="عکس تبلیغات">
-                            <h3> سارا</h3>
-                            <h4>طراح</h4>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <img src="img/testimonial-3.jpg" class="testimonial-img" alt="عکس تبلیغات">
-                            <h3> دلوین</h3>
-                            <h4> بیزینس من</h4>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <img src="img/testimonial-4.jpg" class="testimonial-img" alt="عکس تبلیغات">
-                            <h3> رضا</h3>
-                            <h4>بیزینس من</h4>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <img src="img/testimonial-5.jpg" class="testimonial-img" alt="عکس تبلیغات">
-                            <h3> محمد</h3>
-                            <h4>بیزینس من</h4>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-    <!-- #testimonials -->
 
     <!--==========================
   Team Section
@@ -517,84 +210,31 @@ Intro Section
     <section id="team">
         <div class="container">
             <div class="section-header">
-                <h3>تیم ما</h3>
-                <p> ما یک تیم بسیار حرفه ای هستیم که در کنار شما آماده شده ایم تا تجربیاتمان را در اختیار شما قرار دهیم
-                </p>
+                <h3>مجموعه ای از بهترین کتابهای کودک و نوجوان</h3>
             </div>
-
+            <br>
             <div class="row">
+
+                <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp">
                     <div class="member">
-                        <img src="img/team-1.jpg" class="img-fluid" alt="عکس تبلیغات">
+                        <img src="images/<?php echo e($book->picture); ?>" class="img-fluid" alt="عکس تبلیغات">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4> احسان عظیم نیا</h4>
-                                <span> طراح / برنامه نویس / تولید محتوا</span>
+                                <h4><?php echo e($book->name); ?></h4>
+                                <span><?php echo e($book->price); ?></span>
                                 <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                    <a href="#" class="btn btn-primary">خرید</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="member">
-                        <img src="img/team-2.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4> سارا</h4>
-                                <span> بیزینس من</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="member">
-                        <img src="img/team-3.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4> علی</h4>
-                                <span>بیزینس من</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="member">
-                        <img src="img/team-4.jpg" class="img-fluid" alt="عکس تبلیغات">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4> مریم</h4>
-                                <span>بیزینس من</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 

@@ -8,12 +8,12 @@
 
         <label for="name" style="font-size:200%">نام کتاب :</label>
          <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="<?php echo e($book->name); ?>">
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="<?php echo e($book->name); ?>" required>
         <br>
         <br>
         <label for="price" style="font-size:200%">قیمت کتاب : </label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="price" value="<?php echo e($book->price); ?>">
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="price" value="<?php echo e($book->price); ?>" required>
         <br>
         <br>
 

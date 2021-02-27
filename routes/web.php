@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminBookController;
 use App\Http\Controllers\AdminFeedController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Middleware\IsAdminMiddleware;
+use App\Models\Book;
 use App\Models\Course;
 use App\Models\Feed;
 use App\Models\User;
@@ -63,7 +64,8 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
 Route::get('/', function()  {
     $feeds = Feed::all();
     $courses = Course::all();
-    return view('welcome' , ['feeds' => $feeds , 'courses' => $courses]);
+    $books = Book::all()->take(4);
+    return view('welcome' , ['feeds' => $feeds , 'courses' => $courses , 'books' => $books]);
 });
 
 
