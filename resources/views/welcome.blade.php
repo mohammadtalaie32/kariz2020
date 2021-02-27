@@ -153,11 +153,12 @@ Intro Section
                         <div class="MultiCarousel-inner">
                             @foreach($feeds as $feed)
                                 <div class="item">
-                                    <div class="pad15">
-                                        <p class="lead">Multi Item Carousel</p>
-                                        <p>₹ 1</p>
-                                        <p>₹ 6000</p>
-                                        <p>50% off</p>
+                                    <div class="card">
+                                        <img class="card-img-top" src="images/{{ $feed->picture }}" width="276px" height="200px" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

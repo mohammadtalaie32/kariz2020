@@ -151,11 +151,12 @@ Intro Section
                         <div class="MultiCarousel-inner">
                             <?php $__currentLoopData = $feeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="item">
-                                    <div class="pad15">
-                                        <p class="lead">Multi Item Carousel</p>
-                                        <p>₹ 1</p>
-                                        <p>₹ 6000</p>
-                                        <p>50% off</p>
+                                    <div class="card">
+                                        <img class="card-img-top" src="images/<?php echo e($feed->picture); ?>" width="276px" height="200px" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
                                     </div>
                                 </div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
