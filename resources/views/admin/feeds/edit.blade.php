@@ -3,7 +3,7 @@
     <fieldset style="border: 1px solid white;padding:30px;max-width:100%">
         <form method="POST" action="/admin/feeds/update/{{$feed->id}}" enctype="multipart/form-data">
             {{csrf_field()}}
-            <input type="hidden" name="_method" value="POST">
+
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>
