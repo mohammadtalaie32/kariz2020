@@ -26,7 +26,7 @@ class AdminFeedRequest extends FormRequest
         return [
             //
             'title'=>'required','content'=>'required' ,
-            'picture' => 'image'
+            'picture' => 'image|max:4000'
         ];
     }
 }
