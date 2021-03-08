@@ -3,7 +3,7 @@
     <form method="POST" action="/admin/courses/update/<?php echo e($course->id); ?>" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
-      <input type="hidden" name="_method" value="POST">
+
 
         <label for="name" style="font-size:200%">نام دوره :</label>
         <br>
