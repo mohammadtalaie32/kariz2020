@@ -93,18 +93,23 @@ class AdminUserController extends Controller
         $input = $request->all();
         $user = User::find($id);
         $user->update(["name" => $input["name"] , "email" => $input["email"]]);
-        $row = UserRolePivot::where("user_id" , "=" , $id);
+        $row = UserRolePivot::where("user_id" , "=" , $id)->first();
         if(strtolower($input["roles"]) == "admin"){
-            $row->update(["role_id" => 1]);
+//            $row->update(["role_id" => 1]);
+              $row->role_id = 1;
+              $row->save();
 
         }
         elseif(strtolower($input["roles"]) == "teacher"){
-            $row->update(["role_id" => 2]);
+//            $row->update(["role_id" => 2]);
+              $row->role_id = 2;
+              $row->save();
 
         }
         elseif(strtolower($input["roles"]) == "student"){
-            $row->update(["role_id" => 3]);
-
+//            $row->update(["role_id" => 3]);
+              $row->role_id = 3;
+              $row->save();
         }
         return redirect("/admin/add_users");
     }
