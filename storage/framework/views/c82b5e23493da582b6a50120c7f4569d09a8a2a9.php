@@ -3,7 +3,7 @@
         <form method="POST" action="/admin/books/update/<?php echo e($book->id); ?>" enctype="multipart/form-data">
             <?php echo e(csrf_field()); ?>
 
-            <input type="hidden" name="_method" value="POST">
+
 
         <label for="name" style="font-size:200%">نام کتاب :</label>
          <br>

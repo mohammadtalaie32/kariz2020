@@ -48,14 +48,26 @@ class AdminUserController extends Controller
         User::create($input);
         $id = User::all()->last()->id;
         if(strtolower($input["roles"]) == "admin"){
-            UserRolePivot::create(["user_id" => $id , "role_id" => 1]);
+//            UserRolePivot::create(["user_id" => $id , "role_id" => 1]);
+              $pivot = new UserRolePivot;
+              $pivot->user_id = $id;
+              $pivot->role_id = 1;
+              $pivot->save();
         }
         elseif(strtolower($input["roles"]) == "teacher"){
-            UserRolePivot::create(["user_id" => $id , "role_id" => 2]);
+//            UserRolePivot::create(["user_id" => $id , "role_id" => 2]);
+            $pivot = new UserRolePivot;
+            $pivot->user_id = $id;
+            $pivot->role_id = 2;
+            $pivot->save();
         }
         elseif(strtolower($input["roles"])){
 
-            UserRolePivot::create(["user_id" => $id ,"role_id" => 3]);
+//            UserRolePivot::create(["user_id" => $id ,"role_id" => 3]);
+            $pivot = new UserRolePivot;
+            $pivot->user_id = $id;
+            $pivot->role_id = 3;
+            $pivot->save();
         }
         return redirect("/admin/add_users");
 
@@ -84,12 +96,15 @@ class AdminUserController extends Controller
         $row = UserRolePivot::where("user_id" , "=" , $id);
         if(strtolower($input["roles"]) == "admin"){
             $row->update(["role_id" => 1]);
+
         }
         elseif(strtolower($input["roles"]) == "teacher"){
             $row->update(["role_id" => 2]);
+
         }
         elseif(strtolower($input["roles"]) == "student"){
             $row->update(["role_id" => 3]);
+
         }
         return redirect("/admin/add_users");
     }

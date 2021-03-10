@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class UserRolePivot extends Model
 {
     use HasFactory;
-    protected $fillable=['user_id','role_id'];
+
 }
