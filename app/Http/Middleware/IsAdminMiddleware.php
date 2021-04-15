@@ -18,8 +18,8 @@ class IsAdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            $role = Auth::user()->Role;
-            if ((strtolower($role[0]['role_name'])) != 'admin'){
+            $role = Auth::user()->roles;
+            if ((strtolower($role)) != 'admin'){
                 return redirect('login');
             }
             else{

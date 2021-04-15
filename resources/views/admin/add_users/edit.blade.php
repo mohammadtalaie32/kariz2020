@@ -16,7 +16,7 @@
             <br><br>
 
             <label for="roles">نقش کاربر : </label><br>
-            @if(($user->Role)[0]["role_name"] == "admin")
+            @if($user->roles == "admin")
             <select id="roles" name="roles" form="users" class="browser-default custom-select">
                 <option value="admin" id="id1" selected>Admin</option>
                 <option value="teacher" id="id2">Teacher</option>
@@ -25,7 +25,7 @@
             </select>
 
 
-            @elseif(($user->Role)[0]["role_name"] == "teacher")
+            @elseif($user->roles == "teacher")
                 <select id="roles" name="roles" form="users" class="browser-default custom-select">
                     <option value="admin" id="id1">Admin</option>
                     <option value="teacher" id="id2" selected>Teacher</option>
@@ -34,7 +34,7 @@
                 </select>
 
 
-            @elseif(($user->Role)[0]["role_name"] == "student")
+            @elseif($user->roles == "student")
                 <select id="roles" name="roles" form="users" class="browser-default custom-select">
                     <option value="admin" id="id1">Admin</option>
                     <option value="teacher" id="id2" >Teacher</option>

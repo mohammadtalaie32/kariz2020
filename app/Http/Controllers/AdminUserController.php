@@ -46,29 +46,6 @@ class AdminUserController extends Controller
         $input = $request->all();
         $input["password"] = bcrypt($request->password);
         User::create($input);
-        $id = User::all()->last()->id;
-        if(strtolower($input["roles"]) == "admin"){
-//            UserRolePivot::create(["user_id" => $id , "role_id" => 1]);
-              $pivot = new UserRolePivot;
-              $pivot->user_id = $id;
-              $pivot->role_id = 1;
-              $pivot->save();
-        }
-        elseif(strtolower($input["roles"]) == "teacher"){
-//            UserRolePivot::create(["user_id" => $id , "role_id" => 2]);
-            $pivot = new UserRolePivot;
-            $pivot->user_id = $id;
-            $pivot->role_id = 2;
-            $pivot->save();
-        }
-        elseif(strtolower($input["roles"])){
-
-//            UserRolePivot::create(["user_id" => $id ,"role_id" => 3]);
-            $pivot = new UserRolePivot;
-            $pivot->user_id = $id;
-            $pivot->role_id = 3;
-            $pivot->save();
-        }
         return redirect("/admin/add_users");
 
     }
@@ -92,25 +69,8 @@ class AdminUserController extends Controller
         //
         $input = $request->all();
         $user = User::find($id);
-        $user->update(["name" => $input["name"] , "email" => $input["email"]]);
-        $row = UserRolePivot::where("user_id" , "=" , $id)->first();
-        if(strtolower($input["roles"]) == "admin"){
-//            $row->update(["role_id" => 1]);
-              $row->role_id = 1;
-              $row->save();
-
-        }
-        elseif(strtolower($input["roles"]) == "teacher"){
-//            $row->update(["role_id" => 2]);
-              $row->role_id = 2;
-              $row->save();
-
-        }
-        elseif(strtolower($input["roles"]) == "student"){
-//            $row->update(["role_id" => 3]);
-              $row->role_id = 3;
-              $row->save();
-        }
+        $user->update(["name" => $input["name"] , "email" => $input["email"],"roles"=>$input["roles"]]);
+ 
         return redirect("/admin/add_users");
     }
 
@@ -125,7 +85,6 @@ class AdminUserController extends Controller
         //
         $user = User::find($id);
         $user->delete();
-        $role = UserRolePivot::where("user_id" , "=" , $id)->delete();
         return redirect("/admin/add_users");
     }
 

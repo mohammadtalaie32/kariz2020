@@ -4,12 +4,6 @@
             <?php echo e(csrf_field()); ?>
 
             <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_user" name="browser" placeholder="نام کاربر جست و جو کنید ..." list="browsers" class="animate">
-            <datalist id="browsers">
-                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option><?php echo e($user->name); ?></option>
-
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </datalist>
             <input hidden type="submit" value="جستجو" class="btn btn-primary" >
         </form>
     </div><br><br><br>
@@ -21,15 +15,6 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -51,7 +36,7 @@
             <tbody>
            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                <tr id="row_content" onclick="window.location.href = ('/admin/add_users/<?php echo e($user->id); ?>/edit');">
-                   <td style="color:white"><?php echo e(($user->Role)[0]["role_name"]); ?></td>
+                   <td style="color:white"><?php echo e($user->roles); ?></td>
                    <td style="color:white"><?php echo e($user->email); ?></td>
                    <td style="color:white"> <?php echo e($user->name); ?></td>
                    <td style="color:white"><?php echo e($count++); ?></td>

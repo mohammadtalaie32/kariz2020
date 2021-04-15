@@ -3,7 +3,7 @@
         <form method="POST" action="/admin/feeds/update/<?php echo e($feed->id); ?>" enctype="multipart/form-data">
             <?php echo e(csrf_field()); ?>
 
-            <input type="hidden" name="_method" value="POST">
+
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>

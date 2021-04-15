@@ -42,6 +42,7 @@ class AdminBookController extends Controller
 
         if(array_key_exists('picture', $input)) {
             $name = $request->file('picture')->getClientOriginalName();
+            $name = basename($name);
             $request->file('picture')->move('images', $name);
             $input['picture'] = $name;
         }
@@ -87,6 +88,7 @@ class AdminBookController extends Controller
         $input = $request->all();
         if(array_key_exists('picture',$input)) {
             $name = $request->file('picture')->getClientOriginalName();
+            $name = basename($name);
             $request->file('picture')->move('images', $name);
             $input['picture'] = $name;
         }

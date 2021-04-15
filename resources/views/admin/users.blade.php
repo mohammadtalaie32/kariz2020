@@ -5,12 +5,6 @@
         <form method = "POST" action="/admin/add_users/searched">
             {{csrf_field()}}
             <input style="margin-right:0px;padding-right:20px;padding-left: 20px" type="text" name="searched_user" name="browser" placeholder="نام کاربر جست و جو کنید ..." list="browsers" class="animate">
-            <datalist id="browsers">
-                @foreach($users as $user)
-                    <option>{{$user->name}}</option>
-
-                @endforeach
-            </datalist>
             <input hidden type="submit" value="جستجو" class="btn btn-primary" >
         </form>
     </div><br><br><br>
@@ -25,16 +19,7 @@
 
 
 
-{{--@foreach($users as $user)--}}
-{{--    <div style="background-color:rebeccapurple;border-radius:10px;word-wrap:break-word;overflow:hidden;max-width:100%">--}}
-{{--        <h3><a href="/admin/add_users/{{$user->id}}/edit" style="color:red"> {{$user->name}}</a></h3>--}}
-{{--        <h3 style="color:white">{{$user->email}}</h3>--}}
-{{--        <h3 style="color:black">{{($user->Role)[0]["role_name"]}}</h3>--}}
 
-{{--    </div>--}}
-
-{{--    <br>--}}
-{{--@endforeach--}}
 <?php
     $count = 1;
 ?>
@@ -52,7 +37,7 @@
             <tbody>
            @foreach($users as $user)
                <tr id="row_content" onclick="window.location.href = ('/admin/add_users/{{$user->id}}/edit');">
-                   <td style="color:white">{{($user->Role)[0]["role_name"]}}</td>
+                   <td style="color:white">{{$user->roles}}</td>
                    <td style="color:white">{{$user->email}}</td>
                    <td style="color:white"> {{$user->name}}</td>
                    <td style="color:white">{{$count++}}</td>

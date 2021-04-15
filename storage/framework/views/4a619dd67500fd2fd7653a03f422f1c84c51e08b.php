@@ -17,7 +17,7 @@
                 <tbody>
                 <?php $__currentLoopData = $searched_users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searched_user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr id="row_content" onclick="window.location.href = ('/admin/add_users/<?php echo e($searched_user->id); ?>/edit');">
-                        <td style="color:white"><?php echo e(($searched_user->Role)[0]["role_name"]); ?></td>
+                        <td style="color:white"><?php echo e($searched_user->roles); ?></td>
                         <td style="color:white"><?php echo e($searched_user->email); ?></td>
                         <td style="color:white"> <?php echo e($searched_user->name); ?></td>
                         <td style="color:white"><?php echo e($count++); ?></td>

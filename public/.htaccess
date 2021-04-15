@@ -18,4 +18,18 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+<files web.config>
+order allow,deny
+deny from all
+</files>    
+
+<files robots.txt>
+order allow,deny
+deny from all
+</files> 
+
+ErrorDocument 403 /error.html
+
 </IfModule>
+

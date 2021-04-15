@@ -18,7 +18,7 @@
                 <tbody>
                 @foreach($searched_users as $searched_user)
                     <tr id="row_content" onclick="window.location.href = ('/admin/add_users/{{$searched_user->id}}/edit');">
-                        <td style="color:white">{{($searched_user->Role)[0]["role_name"]}}</td>
+                        <td style="color:white">{{$searched_user->roles}}</td>
                         <td style="color:white">{{$searched_user->email}}</td>
                         <td style="color:white"> {{$searched_user->name}}</td>
                         <td style="color:white">{{$count++}}</td>

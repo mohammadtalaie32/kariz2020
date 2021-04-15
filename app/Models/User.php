@@ -19,7 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'password','roles'
     ];
 
     /**
@@ -41,14 +41,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Role(){
-        return $this->belongsToMany('App\Models\Role','user_role_pivots','user_id','role_id');
-    }
+
+
+
 
     public function isAdmin() {
-        if($this->Role->first()->role_name == 'admin') {
+        if($this->roles == 'admin') {
             return 1;
         }
         return 0;
     }
+
 }

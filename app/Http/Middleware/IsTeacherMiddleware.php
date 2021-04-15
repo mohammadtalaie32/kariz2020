@@ -18,8 +18,8 @@ class IsTeacherMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            $role = Auth::user()->Role;
-            if ((strtolower($role[0]['role_name'])) != 'teacher') {
+            $role = Auth::user()->roles;
+            if ((strtolower($role)) != 'teacher') {
                 return redirect('login');
             } else {
                 return $next($request);
