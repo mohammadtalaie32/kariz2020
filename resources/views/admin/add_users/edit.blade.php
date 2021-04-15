@@ -6,11 +6,11 @@
             {{csrf_field()}}
             <label for="name" style="font-size:200%"> نام کاربر : </label>
             <br>
-            <input type="text" size="50" name="name" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" value="{{$user->name}}" required>
+            <input type="text" size="50" name="name" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" value="{{$user->name}}" required maxlength="100">
             <br><br>
             <label for="email" style="font-size:200%"> ایمیل کاربر : </label>
             <br>
-            <input type="email" size="50" name="email" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" value="{{$user->email}}" required>
+            <input type="email" size="50" name="email" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" value="{{$user->email}}" required maxlength="100">
 
 
             <br><br>

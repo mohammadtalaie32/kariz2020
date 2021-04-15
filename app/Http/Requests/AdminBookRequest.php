@@ -25,7 +25,7 @@ class AdminBookRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required','price'=>'required' ,
+            'name'=>'required|max:100','price'=>'required|max:100' ,
             'picture' => 'image|max:300'
         ];
     }

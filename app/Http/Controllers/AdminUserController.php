@@ -15,9 +15,22 @@ class AdminUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function is_inti($value){
+
+
+        if (!filter_var($value, FILTER_VALIDATE_INT) === false and (int)$value > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function index()
     {
         //
+    
         $users = User::all();
         return view("admin.users",compact('users'));
 
@@ -53,8 +66,13 @@ class AdminUserController extends Controller
     public function edit($id)
     {
         //
+        if($this->is_inti($id) == true){
         $user = User::find($id);
         return view("admin.add_users.edit",compact('user'));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -67,11 +85,16 @@ class AdminUserController extends Controller
     public function update(AdminUserEditRequest $request, $id)
     {
         //
+        if($this->is_inti($id) == true){
         $input = $request->all();
         $user = User::find($id);
         $user->update(["name" => $input["name"] , "email" => $input["email"],"roles"=>$input["roles"]]);
  
         return redirect("/admin/add_users");
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -83,9 +106,14 @@ class AdminUserController extends Controller
     public function destroy($id)
     {
         //
+        if($this->is_inti($id) == true){
         $user = User::find($id);
         $user->delete();
         return redirect("/admin/add_users");
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     public function keyword($string1,$string2){

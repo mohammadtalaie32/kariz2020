@@ -19,7 +19,15 @@ class AdminCourseController extends Controller
     {
         //
     }
+    public function is_inti($value){
 
+
+        if (!filter_var($value, FILTER_VALIDATE_INT) === false and (int)$value > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -73,8 +81,13 @@ class AdminCourseController extends Controller
     public function edit($id)
     {
         //
+        if($this->is_inti($id) == true){
         $course = Course::find($id);
         return view('admin.courses.edit',compact('course'));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -87,6 +100,7 @@ class AdminCourseController extends Controller
     public function update(AdminCourseRequest $request, $id)
     {
         //
+        if($this->is_inti($id) == true){
         $course = Course::find($id);
         $input = $request->all();
         if(array_key_exists('picture',$input)) {
@@ -97,6 +111,10 @@ class AdminCourseController extends Controller
         }
         $course->update($input);
         return redirect('/admin/courses');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -108,12 +126,17 @@ class AdminCourseController extends Controller
     public function destroy($id)
     {
         //
+        if($this->is_inti($id)){
         $course  = Course::find($id);
 //        if($course['picture'] != 'Null') {
 //            unlink('images/' . $course->picture);
 //        }
         $course->delete();
         return redirect('/admin/courses');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     public function keyword($string1,$string2){

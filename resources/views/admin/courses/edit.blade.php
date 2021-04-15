@@ -7,17 +7,17 @@
 
         <label for="name" style="font-size:200%">نام دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$course->name}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$course->name}}" required maxlength="100">
         <br>
         <br>
         <label for="teacher" style="font-size:200%">نام مدرس دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="teacher" value="{{$course->teacher}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="teacher" value="{{$course->teacher}}" required maxlength="100">
         <br>
         <br>
         <label for = "date" style="font-size:200%">تاریخ دوره :</label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="date" value="{{$course->date}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="date" value="{{$course->date}}" required maxlength="100">
         <br>
         <br>
         <label for = "text" style="font-size:200%">توضیحات دوره :</label>
@@ -27,7 +27,8 @@
         <br>
         <label for="picture" style="font-size:200%">عکس دوره : </label>
         <br>
-        <input type  = "file" name="picture" style="color:white" value="{{$course->picture}}">
+        <?php $picture = basename($course->picture);?>
+        <input type  = "file" name="picture" style="color:white" value="{{$picture}}">
         <br>
         <br>
         <input type = "submit" value="به روز رسانی دوره" class="btn btn-primary" style="font-size:200%;float:right">

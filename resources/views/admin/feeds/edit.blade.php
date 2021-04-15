@@ -7,7 +7,7 @@
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="title" value="{{$feed->title}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="title" value="{{$feed->title}}" required maxlength="100">
         <br>
         <br>
         <label for = "content" style="font-size:200%">توضیحات اطلاعیه :</label>
@@ -17,7 +17,8 @@
         <br>
         <label for="picture" style="font-size:200%">عکس اطلاعیه : </label>
         <br>
-        <input type  = "file" name="picture" style="color:white" value="{{$feed->picture}}">
+        <?php $picture = basename($feed->picture);?>
+        <input type  = "file" name="picture" style="color:white" value="{{$picture}}">
         <br>
         <br>
         <input type = "submit" value="به روز رسانی اطلاعیه" class="btn btn-primary" style="font-size:200%;float:right">

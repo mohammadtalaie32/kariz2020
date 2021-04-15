@@ -25,7 +25,7 @@ class AdminCourseRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required','teacher'=>'required','date'=>'required'
+            'name'=>'required|max:100','teacher'=>'required|max:100','date'=>'required|max:100'
             ,'text'=>'required' , 'picture' => 'image|max:300'
         ];
     }

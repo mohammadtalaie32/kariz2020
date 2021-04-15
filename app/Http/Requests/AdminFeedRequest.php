@@ -25,7 +25,7 @@ class AdminFeedRequest extends FormRequest
     {
         return [
             //
-            'title'=>'required','content'=>'required' ,
+            'title'=>'required|max:100','content'=>'required' ,
             'picture' => 'image|max:300'
         ];
     }

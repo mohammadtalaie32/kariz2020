@@ -25,7 +25,7 @@ class AdminUserEditRequest extends FormRequest
     {
         return [
             //
-            "name"=>"required" , "email"=>"required|email" , "roles"=>"required"
+            "name"=>"required|max:100" , "email"=>"required|email|max:100" , "roles"=>"required|max:100"
         ];
     }
 }

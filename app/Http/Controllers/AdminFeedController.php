@@ -17,7 +17,15 @@ class AdminFeedController extends Controller
     {
         //
     }
+    public function is_inti($value){
 
+
+        if (!filter_var($value, FILTER_VALIDATE_INT) === false and (int)$value > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -70,8 +78,13 @@ class AdminFeedController extends Controller
     public function edit($id)
     {
         //
+        if($this->is_inti($id) == true){
         $feed  = Feed::find($id);
         return view('admin.feeds.edit',compact('feed'));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -84,6 +97,7 @@ class AdminFeedController extends Controller
     public function update(AdminFeedRequest $request, $id)
     {
         //
+        if($this->is_inti($id) == true){
         $feed = Feed::find($id);
         $input = $request->all();
         if(array_key_exists('picture',$input)) {
@@ -94,6 +108,10 @@ class AdminFeedController extends Controller
         }
         $feed->update($input);
         return redirect('/admin/feeds');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -105,9 +123,14 @@ class AdminFeedController extends Controller
     public function destroy($id)
     {
         //
+        if($this->is_inti($id) == true){
         $feed  = Feed::find($id);
         $feed->delete();
         return redirect('/admin/feeds');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     public function keyword($string1,$string2){

@@ -6,7 +6,7 @@
 
         <label for="title" style="font-size:200%">عنوان اطلاعیه : </label>
         <br>
-        <input type="text" size="50" name="title" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" required>
+        <input type="text" size="50" name="title" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" required maxlength="100">
         <br>
         <br>
         <label for="content" style="font-size:200% ">توضیحات اطلاعیه : </label>

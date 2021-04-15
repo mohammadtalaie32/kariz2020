@@ -5,12 +5,12 @@
             {{csrf_field()}}
         <label for="name" style="font-size:200%"> نام کتاب : </label>
         <br>
-        <input type="text" size="50" name="name" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" required>
+        <input type="text" size="50" name="name" style="font-size:150%;border:2px solid gray;border-radius:10px;max-width:100%" required maxlength="100">
         <br>
         <br>
         <label for="price" style="font-size:200% ">قیمت کتاب : </label>
         <br>
-        <input type="text" size="50" name="price" style="font-size:150%;border:2px solid gray;border-radius: 10px;max-width:100%" required>
+        <input type="text" size="50" name="price" style="font-size:150%;border:2px solid gray;border-radius: 10px;max-width:100%" required maxlength="100">
         <br>
         <br>
         <label for="picture" style="font-size:200%">عکس کتاب : </label>

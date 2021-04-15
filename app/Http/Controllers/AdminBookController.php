@@ -13,6 +13,19 @@ class AdminBookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function is_inti($value){
+
+
+        if (!filter_var($value, FILTER_VALIDATE_INT) === false and (int)$value > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
     public function index()
     {
         //
@@ -70,8 +83,13 @@ class AdminBookController extends Controller
     public function edit($id)
     {
         //
+        if($this->is_inti($id) == true){
         $book = Book::find($id);
         return view('admin.books.edit',compact('book'));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -84,6 +102,7 @@ class AdminBookController extends Controller
     public function update(AdminBookRequest $request, $id)
     {
         //
+        if($this->is_inti($id) == true){
         $book = Book::find($id);
         $input = $request->all();
         if(array_key_exists('picture',$input)) {
@@ -94,6 +113,10 @@ class AdminBookController extends Controller
         }
         $book->update($input);
         return redirect('/admin/books');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -105,12 +128,17 @@ class AdminBookController extends Controller
     public function destroy($id)
     {
         //
+        if($this->is_inti($id) == true){
         $book  = Book::find($id);
 //        if($book['picture'] != 'Null') {
 //            unlink('images/' . $book->picture);
 //        }
         $book->delete();
         return redirect('/admin/books');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     public function keyword($string1,$string2){

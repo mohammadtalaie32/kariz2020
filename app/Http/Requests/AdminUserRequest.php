@@ -25,8 +25,8 @@ class AdminUserRequest extends FormRequest
     {
         return [
             //
-            "name"=>"required","email"=>"required|email" , "password"=>"required|min:8",
-            "roles"=>"required"
+            "name"=>"required|max:100","email"=>"required|email|max:100" , "password"=>"required|min:8|max:80",
+            "roles"=>"required|max:100"
         ];
     }
 }

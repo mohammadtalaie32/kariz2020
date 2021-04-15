@@ -7,18 +7,18 @@
 
         <label for="name" style="font-size:200%">نام کتاب :</label>
          <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$book->name}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="name" value="{{$book->name}}" required maxlength="100">
         <br>
         <br>
         <label for="price" style="font-size:200%">قیمت کتاب : </label>
         <br>
-        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="price" value="{{$book->price}}" required>
+        <input type="text" style="font-size:150%;border:2px solid gray;Border-radius:10px;max-width:100%" size="50" name="price" value="{{$book->price}}" required maxlength="100">
         <br>
         <br>
-
+        <?php $picture = basename($book->picture);?>
         <label for="picture" style="font-size:200%">عکس کتاب : </label>
         <br>
-        <input type  = "file" name="picture" style="color:white" value="{{$book->picture}}">
+        <input type  = "file" name="picture" style="color:white" value="{{$picture}}">
         <br>
         <br>
         <input type = "submit" value="به روز رسانی کتاب  " class="btn btn-primary" style="font-size:200%;float:right">
