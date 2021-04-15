@@ -31,5 +31,15 @@ deny from all
 
 ErrorDocument 403 /error.html
 
+
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
 </IfModule>
 
