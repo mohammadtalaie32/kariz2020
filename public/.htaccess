@@ -33,8 +33,8 @@ order allow,deny
 deny from all
 </files> 
 
-ErrorDocument 403 /error.html
-
+ErrorDocument 403 /error.html/
+ErrorDocument 404 /error.html/
 
 <IfModule mod_headers.c>
     Header set X-Frame-Options "DENY"

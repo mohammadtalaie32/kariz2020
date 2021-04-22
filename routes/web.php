@@ -60,7 +60,6 @@ Route::middleware(['IsAdminMiddleware'])->group(function () {
 });
 // End Of Admin Routes
 
-
 Route::get('/', function()  {
     $feeds = Feed::all();
     $courses = Course::all();
